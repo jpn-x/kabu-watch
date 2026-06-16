@@ -70,7 +70,21 @@ def fetch(url: str) -> "BeautifulSoup | None":
         html = fetch_with_requests(url)
     if html is None:
         return None
-    return BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
+    # デバッグ: ページタイトルと先頭500文字を出力
+    title = soup.title.string if soup.title else "(no title)"
+    print(f"[DEBUG] title: {title}")
+    tables = soup.select("table")
+    print(f"[DEBUG] table count: {len(tables)}")
+    for i, t in enumerate(tables[:3]):
+        rows = t.select("tr")
+        print(f"[DEBUG] table[{i}] rows={len(rows)} first_text={t.get_text()[:120].strip()!r}")
+    # HTMLスニペットをファイルに保存（構造確認用）
+    slug = url.split("/")[-2] if url.endswith("/") else url.split("/")[-1].replace(".html","")
+    Path("data").mkdir(exist_ok=True)
+    with open(f"data/debug_{slug}.html", "w", encoding="utf-8") as f:
+        f.write(html[:50000])
+    return soup
 
 
 # ---- パース ----
