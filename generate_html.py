@@ -66,10 +66,19 @@ def render_row(s: dict) -> str:
     delisting = s.get("delisting_date") or "—"
     designated = s.get("designated_date") or "—"
     market = s.get("market") or "—"
+    reason = s.get("reason") or ""
+    name_html = f'{icon} {s["name"]}'
+    if reason:
+        name_html += f'<br><small style="color:var(--text-muted)">{reason}</small>'
+    css_class = (s["risk_level"]
+                 .replace("廃止確定", "abolished")
+                 .replace("極高", "extreme")
+                 .replace("高", "high")
+                 .replace("中", "mid"))
     return f"""
-      <tr class="row-{s['risk_level'].replace('廃止確定','abolished').replace('極高','extreme').replace('高','high')}">
+      <tr class="row-{css_class}">
         <td><span class="stock-code">{s['code']}</span></td>
-        <td><span class="stock-name">{icon} {s['name']}</span></td>
+        <td><span class="stock-name">{name_html}</span></td>
         <td>{market}</td>
         <td>{badge}</td>
         <td>{designated}</td>

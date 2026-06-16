@@ -115,31 +115,49 @@ def parse_table_rows(soup, category: str, risk_level: str) -> list[dict]:
     return stocks
 
 
+def _extract_code(text: str) -> str:
+    """テキストから4桁の銘柄コードを抽出"""
+    m = re.search(r"\b(\d{4})\b", text)
+    return m.group(1) if m else ""
+
+
 def parse_supervision(soup) -> list[dict]:
-    """監理・整理銘柄一覧ページ — 監理ポストと整理ポストが混在"""
+    """
+    監理・整理銘柄一覧ページ
+    列順: 指定年月日 | 銘柄名 | コード | 市場区分 | 詳細 | 備考
+    テーブルが複数あり、見出し（caption/th）で監理/整理を判別する
+    """
     if soup is None:
         return []
     stocks = []
-    # 複数テーブルを走査し、ヘッダーを見てカテゴリを判定
     for table in soup.select("table"):
-        header_text = table.get_text()
-        if "整理" in header_text:
+        # キャプションや直前の見出しでカテゴリ判定
+        caption = table.find("caption")
+        cap_text = caption.get_text() if caption else ""
+        # th全テキストも補助に使う
+        header_text = " ".join(th.get_text() for th in table.select("th"))
+        if "整理" in cap_text or "整理" in header_text:
             cat, risk = "整理ポスト", "極高"
         else:
             cat, risk = "管理ポスト（監理）", "高"
+
         for row in table.select("tbody tr"):
             cells = [td.get_text(strip=True) for td in row.select("td")]
-            if len(cells) < 2:
+            if len(cells) < 3:
                 continue
-            code = re.sub(r"\D", "", cells[0])[:4]
-            if not re.match(r"^\d{4}$", code):
+            # 列順: 指定日 | 銘柄名 | コード | 市場 | ...
+            designated_date = cells[0]
+            name = cells[1]
+            code = _extract_code(cells[2])
+            market = cells[3] if len(cells) > 3 else ""
+            if not code:
                 continue
             stocks.append({
                 "code": code,
-                "name": cells[1] if len(cells) > 1 else "",
-                "market": cells[2] if len(cells) > 2 else "",
-                "designated_date": cells[3] if len(cells) > 3 else "",
-                "delisting_date": cells[4] if len(cells) > 4 else "",
+                "name": name,
+                "market": market,
+                "designated_date": designated_date,
+                "delisting_date": "",
                 "category": cat,
                 "risk_level": risk,
             })
@@ -147,30 +165,72 @@ def parse_supervision(soup) -> list[dict]:
 
 
 def parse_improvement(soup) -> list[dict]:
-    """改善期間該当銘柄"""
-    return parse_table_rows(soup, "改善期間中", "中")
-
-
-def parse_delisted(soup) -> list[dict]:
-    """上場廃止銘柄一覧（直近のもの）"""
+    """
+    改善期間該当銘柄（PDFリンクが主体のページ）
+    テーブルがあれば取得、なければスキップ
+    """
     if soup is None:
         return []
     stocks = []
     for row in soup.select("table tbody tr"):
         cells = [td.get_text(strip=True) for td in row.select("td")]
-        if len(cells) < 2:
+        if len(cells) < 3:
             continue
-        code = re.sub(r"\D", "", cells[0])[:4]
-        if not re.match(r"^\d{4}$", code):
+        code = _extract_code(cells[2])
+        if not code:
             continue
         stocks.append({
             "code": code,
-            "name": cells[1] if len(cells) > 1 else "",
-            "market": cells[2] if len(cells) > 2 else "",
+            "name": cells[1],
+            "market": cells[3] if len(cells) > 3 else "",
+            "designated_date": cells[0],
+            "delisting_date": "",
+            "category": "改善期間中",
+            "risk_level": "中",
+        })
+    return stocks
+
+
+def parse_delisted(soup) -> list[dict]:
+    """
+    上場廃止銘柄一覧
+    列順: 上場廃止日 | 銘柄名 | コード | 市場区分 | 上場廃止理由
+    直近1年分を取得（廃止日が未来のものは特に重要）
+    """
+    if soup is None:
+        return []
+    from datetime import datetime, timezone, timedelta
+    JST = timezone(timedelta(hours=9))
+    cutoff = datetime.now(JST).replace(year=datetime.now(JST).year - 1)
+
+    stocks = []
+    for row in soup.select("table tbody tr"):
+        cells = [td.get_text(strip=True) for td in row.select("td")]
+        if len(cells) < 3:
+            continue
+        delisting_date = cells[0]
+        name = cells[1]
+        code = _extract_code(cells[2])
+        market = cells[3] if len(cells) > 3 else ""
+        reason = cells[4] if len(cells) > 4 else ""
+        if not code:
+            continue
+        # 廃止日が未来（まだ廃止されていない予定銘柄）を優先表示
+        try:
+            d = datetime.strptime(delisting_date, "%Y/%m/%d").replace(tzinfo=JST)
+            if d < cutoff:
+                continue  # 1年以上前の廃止は除外
+        except ValueError:
+            pass
+        stocks.append({
+            "code": code,
+            "name": name,
+            "market": market,
             "designated_date": "",
-            "delisting_date": cells[3] if len(cells) > 3 else "",
+            "delisting_date": delisting_date,
             "category": "上場廃止",
             "risk_level": "廃止確定",
+            "reason": reason,
         })
     return stocks
 
