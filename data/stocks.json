@@ -1,34 +1,1495 @@
 {
-  "updated_at": "2026-06-16 15:55:14",
-  "updated_at_iso": "2026-06-16T15:55:14.685716+09:00",
-  "count": 3,
+  "updated_at": "2026-06-16 15:58:36",
+  "updated_at_iso": "2026-06-16T15:58:36.283820+09:00",
+  "count": 154,
   "stocks": [
     {
-      "code": "2026",
+      "code": "3480",
       "name": "（株）ジェイ・エス・ビー",
-      "market": "3480",
-      "designated_date": "プライム",
+      "market": "プライム",
+      "designated_date": "2026/06/12",
       "delisting_date": "",
       "category": "管理ポスト（監理）",
       "risk_level": "高"
     },
     {
-      "code": "2025",
+      "code": "9216",
+      "name": "ビーウィズ（株）",
+      "market": "プライム",
+      "designated_date": "2026/06/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "2162",
+      "name": "ｎｍｓ　ホールディングス（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/05/29",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "4800",
+      "name": "オリコン（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/05/28",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "1948",
+      "name": "（株）弘電社",
+      "market": "スタンダード",
+      "designated_date": "2026/05/25",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "4171",
+      "name": "（株）グローバルインフォメーション",
+      "market": "スタンダード",
+      "designated_date": "2026/05/20",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7940",
+      "name": "ウェーブロックホールディングス（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/05/20",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "5484",
+      "name": "東北特殊鋼（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/05/15",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "8141",
+      "name": "新光商事（株）",
+      "market": "プライム",
+      "designated_date": "2026/05/15",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7082",
+      "name": "（株）ジモティー",
+      "market": "グロース",
+      "designated_date": "2026/05/15",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "5644",
+      "name": "（株）メタルアート",
+      "market": "スタンダード",
+      "designated_date": "2026/05/14",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "9691",
+      "name": "（株）両毛システムズ",
+      "market": "スタンダード",
+      "designated_date": "2026/05/14",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "1909",
+      "name": "日本ドライケミカル（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/05/13",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "2180",
+      "name": "（株）サニーサイドアップグループ",
+      "market": "スタンダード",
+      "designated_date": "2026/05/13",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7183",
+      "name": "あんしん保証（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/05/12",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "2371",
+      "name": "（株）カカクコム",
+      "market": "プライム",
+      "designated_date": "2026/05/12",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7490",
+      "name": "日新商事（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/05/11",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "8283",
+      "name": "（株）ＰＡＬＴＡＣ",
+      "market": "プライム",
+      "designated_date": "2026/05/11",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "5903",
+      "name": "シンポ（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/04/28",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "3271",
+      "name": "（株）ＴＨＥグローバル社",
+      "market": "スタンダード",
+      "designated_date": "2026/04/06",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "4626",
+      "name": "太陽ホールディングス（株）",
+      "market": "プライム",
+      "designated_date": "2026/04/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "3803",
+      "name": "イメージ情報開発（株）",
+      "market": "グロース",
+      "designated_date": "2026/04/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7886",
+      "name": "ヤマト　モビリティ　＆　Ｍｆｇ．（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/04/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "2673",
+      "name": "夢みつけ隊（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/04/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "6197",
+      "name": "（株）ソラスト",
+      "market": "プライム",
+      "designated_date": "2026/03/24",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "5202",
+      "name": "日本板硝子（株）",
+      "market": "プライム",
+      "designated_date": "2026/03/24",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "4464",
+      "name": "（株）ソフト９９コーポレーション",
+      "market": "スタンダード",
+      "designated_date": "2026/02/17",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7317",
       "name": "（株）松屋アールアンドディ",
-      "market": "7317",
-      "designated_date": "グロース",
+      "market": "グロース",
+      "designated_date": "2025/12/15",
       "delisting_date": "",
       "category": "管理ポスト（監理）",
       "risk_level": "高"
     },
     {
-      "code": "2026",
+      "code": "3645",
+      "name": "（株）メディカルネット",
+      "market": "グロース",
+      "designated_date": "2026/06/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "9229",
+      "name": "（株）サンウェルズ",
+      "market": "プライム",
+      "designated_date": "2026/04/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "6615",
+      "name": "ユー・エム・シー・エレクトロニクス（株）",
+      "market": "プライム",
+      "designated_date": "2026/04/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7922",
+      "name": "三光産業（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/06/05",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "3787",
       "name": "（株）テクノマセマティカル",
-      "market": "3787",
+      "market": "スタンダード",
+      "designated_date": "2026/06/03",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "2763",
+      "name": "（株）エフティグループ",
+      "market": "スタンダード",
+      "designated_date": "2026/06/03",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "4659",
+      "name": "（株）エイジス",
+      "market": "スタンダード",
+      "designated_date": "2026/06/02",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "2540",
+      "name": "養命酒製造（株）",
+      "market": "プライム",
+      "designated_date": "2026/06/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "6403",
+      "name": "水道機工（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/06/01",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "9927",
+      "name": "（株）ワットマン",
+      "market": "スタンダード",
+      "designated_date": "2026/05/29",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "3546",
+      "name": "アレンザホールディングス（株）",
+      "market": "プライム",
+      "designated_date": "2026/05/27",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "6147",
+      "name": "（株）ヤマザキ",
+      "market": "スタンダード",
+      "designated_date": "2026/05/27",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "5856",
+      "name": "（株）エルアイイーエイチ",
+      "market": "スタンダード",
+      "designated_date": "2026/05/25",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "2686",
+      "name": "（株）ジーフット",
+      "market": "スタンダード",
+      "designated_date": "2026/05/22",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7851",
+      "name": "カワセコンピュータサプライ（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/05/13",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "9914",
+      "name": "（株）植松商会",
+      "market": "スタンダード",
+      "designated_date": "2026/05/13",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "3681",
+      "name": "（株）ブイキューブ",
+      "market": "プライム",
+      "designated_date": "2026/04/30",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "3670",
+      "name": "協立情報通信（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/04/30",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7426",
+      "name": "（株）山大",
+      "market": "スタンダード",
+      "designated_date": "2026/04/22",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7709",
+      "name": "クボテック（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/04/22",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7946",
+      "name": "（株）光陽社",
+      "market": "スタンダード",
+      "designated_date": "2026/04/15",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7985",
+      "name": "ネポン（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/04/15",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "7255",
+      "name": "（株）桜井製作所",
+      "market": "スタンダード",
+      "designated_date": "2026/04/15",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "4316",
+      "name": "（株）ビーマップ",
+      "market": "グロース",
+      "designated_date": "2026/03/31",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "3787",
+      "name": "（株）テクノマセマティカル",
+      "market": "スタンダード",
       "designated_date": "",
-      "delisting_date": "スタンダード",
+      "delisting_date": "2026/10/01",
       "category": "上場廃止",
-      "risk_level": "廃止確定"
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "2763",
+      "name": "（株）エフティグループ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "6147",
+      "name": "（株）ヤマザキ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "7851",
+      "name": "カワセコンピュータサプライ（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "3670",
+      "name": "協立情報通信（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "7709",
+      "name": "クボテック（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "7426",
+      "name": "（株）山大",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "7255",
+      "name": "（株）桜井製作所",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "7946",
+      "name": "（株）光陽社",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "7985",
+      "name": "ネポン（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "4316",
+      "name": "（株）ビーマップ",
+      "market": "グロース",
+      "designated_date": "",
+      "delisting_date": "2026/10/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "9914",
+      "name": "（株）植松商会",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/09/21",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "3681",
+      "name": "（株）ブイキューブ",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/07/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合"
+    },
+    {
+      "code": "3198",
+      "name": "ＳＦＰホールディングス（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/06/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "クリエイト・レストランツ・ホールディングスに合併（会社合併）"
+    },
+    {
+      "code": "8289",
+      "name": "（株）Ｏｌｙｍｐｉｃグループ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "パン・パシフィック・インターナショナルホールディングスの完全子会社化（株式交換）"
+    },
+    {
+      "code": "4449",
+      "name": "（株）ギフティ",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/06/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ギフティグループの完全子会社化（株式移転）"
+    },
+    {
+      "code": "4494",
+      "name": "バリオセキュア（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＨＥＲＯＺの完全子会社化（株式交換）"
+    },
+    {
+      "code": "3546",
+      "name": "アレンザホールディングス（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/06/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "5856",
+      "name": "（株）エルアイイーエイチ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "内部管理体制確認書が提出され、内部管理体制等が適切に整備されていない又は適切に運用される見込みがなくなったと当取引所が認める場合"
+    },
+    {
+      "code": "7922",
+      "name": "三光産業（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/25",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "6403",
+      "name": "水道機工（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/24",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "2686",
+      "name": "（株）ジーフット",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/23",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（株式併合）"
+    },
+    {
+      "code": "4659",
+      "name": "（株）エイジス",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/19",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "9927",
+      "name": "（株）ワットマン",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/19",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "2540",
+      "name": "養命酒製造（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/06/18",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "6670",
+      "name": "（株）ＭＣＪ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/16",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "9338",
+      "name": "（株）ＩＮＦＯＲＩＣＨ",
+      "market": "グロース",
+      "designated_date": "",
+      "delisting_date": "2026/06/16",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "3294",
+      "name": "（株）イーグランド",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/15",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "4974",
+      "name": "タカラバイオ（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/06/12",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "4556",
+      "name": "（株）カイノス",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/11",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "7999",
+      "name": "ＭＵＴＯＨホールディングス（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/10",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "7229",
+      "name": "（株）ユタカ技研",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/10",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "9067",
+      "name": "（株）丸運",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/04",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "1726",
+      "name": "（株）ビーアールホールディングス",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/06/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "6201",
+      "name": "（株）豊田自動織機",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/06/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "6173",
+      "name": "（株）アクアライン",
+      "market": "グロース",
+      "designated_date": "",
+      "delisting_date": "2026/06/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "内部管理体制確認書が提出され、内部管理体制等が適切に整備されていない又は適切に運用される見込みがなくなったと当取引所が認める場合"
+    },
+    {
+      "code": "4384",
+      "name": "ラクスル（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/05/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "1776",
+      "name": "三井住建道路（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/05/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "5727",
+      "name": "東邦チタニウム（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/05/28",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＪＸ金属の完全子会社化（株式交換）"
+    },
+    {
+      "code": "6489",
+      "name": "前澤工業（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/05/28",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "前澤ホールディングスの完全子会社化（株式移転）"
+    },
+    {
+      "code": "7925",
+      "name": "前澤化成工業（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/05/28",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "前澤ホールディングスの完全子会社化（株式移転）"
+    },
+    {
+      "code": "2692",
+      "name": "伊藤忠食品（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/05/19",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "4917",
+      "name": "（株）マンダム",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/05/15",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "3593",
+      "name": "（株）ホギメディカル",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/05/15",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "6901",
+      "name": "澤藤電機（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/05/15",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "7088",
+      "name": "（株）フォーラムエンジニアリング",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/05/13",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "4530",
+      "name": "久光製薬（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/05/11",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "2344",
+      "name": "平安レイサービス（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/05/08",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（株式併合）"
+    },
+    {
+      "code": "6565",
+      "name": "ＡＢホテル（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/05/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "申請による上場廃止"
+    },
+    {
+      "code": "5259",
+      "name": "ＢＢＤイニシアティブ（株）",
+      "market": "グロース",
+      "designated_date": "",
+      "delisting_date": "2026/04/28",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ヘッドウォータースに合併（会社合併）"
+    },
+    {
+      "code": "3541",
+      "name": "（株）農業総合研究所",
+      "market": "グロース",
+      "designated_date": "",
+      "delisting_date": "2026/04/27",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "7105",
+      "name": "三菱ロジスネクスト（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/04/27",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "8209",
+      "name": "（株）フレンドリー",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/04/27",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（株式併合）"
+    },
+    {
+      "code": "3902",
+      "name": "メディカル・データ・ビジョン（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/04/24",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "7739",
+      "name": "キヤノン電子（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/04/21",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "7092",
+      "name": "（株）Ｆａｓｔ　Ｆｉｔｎｅｓｓ　Ｊａｐａｎ",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/04/20",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "4690",
+      "name": "日本パレットプール（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/04/15",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "7250",
+      "name": "太平洋工業（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/04/13",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "7450",
+      "name": "（株）サンデー",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/04/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "2196",
+      "name": "（株）エスクリ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "オンザページに合併（会社合併）"
+    },
+    {
+      "code": "5352",
+      "name": "黒崎播磨（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "7455",
+      "name": "（株）パリミキホールディングス",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "3924",
+      "name": "（株）ランドコンピュータ",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "トランヴィアの完全子会社化（株式移転）"
+    },
+    {
+      "code": "4333",
+      "name": "（株）東邦システムサイエンス",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "トランヴィアの完全子会社化（株式移転）"
+    },
+    {
+      "code": "6210",
+      "name": "ＴＯＹＯイノベックス（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "GMSグループの完全子会社化（株式移転）"
+    },
+    {
+      "code": "6293",
+      "name": "日精樹脂工業（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "GMSグループの完全子会社化（株式移転）"
+    },
+    {
+      "code": "7205",
+      "name": "日野自動車（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ARCHIONの完全子会社化（株式交換）"
+    },
+    {
+      "code": "7420",
+      "name": "佐鳥電機（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "MIRAINIホールディングスの完全子会社化（株式移転）"
+    },
+    {
+      "code": "7467",
+      "name": "萩原電気ホールディングス（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "MIRAINIホールディングスの完全子会社化（株式移転）"
+    },
+    {
+      "code": "8515",
+      "name": "アイフル（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ムニノバホールディングスの完全子会社化（株式移転）"
+    },
+    {
+      "code": "1841",
+      "name": "サンユー建設（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/27",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "7923",
+      "name": "トーイン（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/27",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "7116",
+      "name": "ダイワ通信（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/25",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（株式併合）"
+    },
+    {
+      "code": "7635",
+      "name": "杉田エース（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/24",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "6406",
+      "name": "フジテック（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/23",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "6734",
+      "name": "（株）ニューテック",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/23",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "3961",
+      "name": "シルバーエッグ・テクノロジー（株）",
+      "market": "グロース",
+      "designated_date": "",
+      "delisting_date": "2026/03/23",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "2389",
+      "name": "（株）デジタルホールディングス",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/19",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "3655",
+      "name": "（株）ブレインパッド",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/17",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "5386",
+      "name": "（株）鶴弥",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/17",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "申請による上場廃止"
+    },
+    {
+      "code": "7718",
+      "name": "スター精密（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/13",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "2374",
+      "name": "セントケア・ホールディング（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/13",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "9719",
+      "name": "ＳＣＳＫ（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/12",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "4957",
+      "name": "ヤスハラケミカル（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/03/06",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "1949",
+      "name": "住友電設（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/03/03",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "7445",
+      "name": "（株）ライトオン",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/02/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ワールドの完全子会社化（株式交換）"
+    },
+    {
+      "code": "9600",
+      "name": "（株）アイネット",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/02/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "3526",
+      "name": "芦森工業（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/02/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "5596",
+      "name": "アウトルックコンサルティング（株）",
+      "market": "グロース",
+      "designated_date": "",
+      "delisting_date": "2026/02/25",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "9776",
+      "name": "札幌臨床検査センター（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/02/16",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（株式併合）"
+    },
+    {
+      "code": "7817",
+      "name": "パラマウントベッドホールディングス（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/02/05",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "5476",
+      "name": "日本高周波鋼業（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/01/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "神戸製鋼所の完全子会社化（株式交換）"
+    },
+    {
+      "code": "6060",
+      "name": "こころネット（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/01/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "燦ホールディングスの完全子会社化（株式交換）"
+    },
+    {
+      "code": "5191",
+      "name": "住友理工（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/01/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式等売渡請求による取得）"
+    },
+    {
+      "code": "4080",
+      "name": "（株）田中化学研究所",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/01/28",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "住友化学の完全子会社化（株式交換）"
+    },
+    {
+      "code": "6312",
+      "name": "フロイント産業（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/01/27",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）"
+    },
+    {
+      "code": "5017",
+      "name": "富士石油（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/01/20",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "2743",
+      "name": "ピクセルカンパニーズ（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/01/16",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "内部管理体制確認書の提出前で、内部管理体制等が適切に整備される又は適切に運用される見込みがなくなったと当取引所が認める場合"
+    },
+    {
+      "code": "6542",
+      "name": "（株）ＦＣホールディングス",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/01/14",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "6957",
+      "name": "（株）芝浦電子",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/01/13",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）"
+    },
+    {
+      "code": "4745",
+      "name": "（株）東京個別指導学院",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/01/08",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（株式併合）"
+    },
+    {
+      "code": "3094",
+      "name": "（株）スーパーバリュー",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/01/05",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式等売渡請求による取得）"
     }
   ],
   "source": "東京証券取引所 (JPX)",
