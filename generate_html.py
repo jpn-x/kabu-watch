@@ -122,6 +122,14 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>東証 危険銘柄ウォッチ 🚨</title>
   <meta name="description" content="東京証券取引所の整理銘柄・監理銘柄・上場廃止確定銘柄を毎日自動更新">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/favicon-512.png">
+  <meta name="theme-color" content="#3d0808">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="危険銘柄ウォッチ">
   <style>
     :root {{
       --red: #e53e3e;

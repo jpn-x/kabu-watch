@@ -23,9 +23,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4 lxml playwright
+          pip install requests beautifulsoup4 lxml playwright Pillow
           playwright install chromium
           playwright install-deps chromium
+
+      - name: アイコン生成
+        run: python generate_icons.py
 
       - name: スクレイピング実行
         run: python scraper.py
@@ -37,6 +40,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/stocks.json index.html
+          git add data/stocks.json index.html apple-touch-icon.png icons/
           git diff --staged --quiet || git commit -m "🔄 データ更新: $(TZ='Asia/Tokyo' date '+%Y-%m-%d %H:%M JST')"
           git push
