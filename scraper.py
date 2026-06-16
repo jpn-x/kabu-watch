@@ -111,16 +111,31 @@ def _extract_code(text: str) -> str:
 
 
 def _heading_before(tag) -> str:
-    """tableの直前にある見出し（h2/h3/h4/strong/caption）テキストを返す"""
-    # まずcaptionを確認
+    """tableの直前にある見出しテキストを返す（caption → 前兄弟 → 親の前兄弟の順で探す）"""
+    # 1. caption
     cap = tag.find("caption")
-    if cap:
-        return cap.get_text()
-    # 直前の兄弟要素を遡って見出しを探す
+    if cap and cap.get_text(strip=True):
+        return cap.get_text(strip=True)
+    # 2. 直前の兄弟要素を遡る
     for sib in tag.find_previous_siblings():
-        text = sib.get_text(strip=True)
-        if text and sib.name in ("h2", "h3", "h4", "h5", "p", "div", "strong"):
-            return text
+        name = getattr(sib, "name", None)
+        if name in ("h2", "h3", "h4", "h5"):
+            return sib.get_text(strip=True)
+        # divやpの中にh*があるケース
+        if name in ("div", "section", "p"):
+            found = sib.find(["h2", "h3", "h4", "h5"])
+            if found:
+                return found.get_text(strip=True)
+            text = sib.get_text(strip=True)
+            if text and any(kw in text for kw in ("整理", "確認中", "審査中", "監理")):
+                return text
+    # 3. 親要素に遡る
+    parent = tag.parent
+    if parent:
+        for sib in parent.find_previous_siblings():
+            name = getattr(sib, "name", None)
+            if name in ("h2", "h3", "h4", "h5"):
+                return sib.get_text(strip=True)
     return ""
 
 
@@ -147,6 +162,7 @@ def parse_supervision(soup) -> list[dict]:
     for table in soup.select("table"):
         heading = _heading_before(table)
         cat, risk = _supervision_category(heading)
+        print(f"[INFO]   テーブル見出し: {heading[:40]!r} → {cat}")
 
         for row in table.select("tbody tr"):
             cells = [td.get_text(strip=True) for td in row.select("td")]

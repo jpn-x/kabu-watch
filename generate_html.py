@@ -8,21 +8,13 @@ from pathlib import Path
 
 JST = timezone(timedelta(hours=9))
 
-RISK_BADGE = {
-    "廃止確定": '<span class="badge badge-abolished">⛔ 上場廃止</span>',
-    "極高":     '<span class="badge badge-extreme">🔴 整理銘柄</span>',
-    "高":       '<span class="badge badge-high">🟠 監理銘柄</span>',
-    "中":       '<span class="badge badge-mid">🟡 改善期間中</span>',
-}
-
-# カテゴリごとの詳細バッジ（risk_levelより優先）
 CATEGORY_BADGE = {
-    "整理銘柄":         '<span class="badge badge-extreme">🔴 整理銘柄</span>',
-    "監理銘柄（確認中）": '<span class="badge badge-kanri-kakunin">🟠 監理（確認中）</span>',
-    "監理銘柄（審査中）": '<span class="badge badge-kanri-shinsa">🟡 監理（審査中）</span>',
-    "監理銘柄":         '<span class="badge badge-high">🟠 監理銘柄</span>',
+    "整理銘柄":         '<span class="badge badge-seiri">🔴 整理銘柄</span>',
+    "監理銘柄（確認中）": '<span class="badge badge-kakunin">🟠 監理（確認中）</span>',
+    "監理銘柄（審査中）": '<span class="badge badge-shinsa">🟡 監理（審査中）</span>',
+    "監理銘柄":         '<span class="badge badge-kanri">🟠 監理銘柄</span>',
     "上場廃止":         '<span class="badge badge-abolished">⛔ 上場廃止</span>',
-    "改善期間中":        '<span class="badge badge-mid">🟡 改善期間中</span>',
+    "改善期間中":        '<span class="badge badge-kaizen">🟡 改善期間中</span>',
 }
 
 CATEGORY_ICON = {
@@ -34,28 +26,35 @@ CATEGORY_ICON = {
     "改善期間中":        "🟡",
 }
 
-TIPS = [
-    ("整理ポスト", "上場廃止が確定または高い確率で見込まれる銘柄。売買は最終売買日まで可能ですが、<strong>基本的に即時損切り推奨</strong>。"),
-    ("管理ポスト", "上場廃止基準に抵触した銘柄。改善期間中ですが廃止になるリスクが非常に高い。<strong>新規購入は厳禁</strong>。"),
-    ("上場廃止決定", "廃止日が確定した銘柄。<strong>最終売買日までに必ず処分</strong>が必要。"),
-    ("その他の注意サイン", "業績未達・監査意見拒絶・債務超過・主要取引先の喪失なども危険シグナル。"),
-]
+# data-cat属性用（タブフィルタキー）
+CATEGORY_KEY = {
+    "整理銘柄":         "seiri",
+    "監理銘柄（確認中）": "kakunin",
+    "監理銘柄（審査中）": "shinsa",
+    "監理銘柄":         "kanri",
+    "上場廃止":         "abolished",
+    "改善期間中":        "kaizen",
+}
 
 ADVICE_HTML = """
 <section class="advice">
   <h2>⚠️ 危険銘柄を見分けるポイント</h2>
   <div class="advice-grid">
-    <div class="advice-card">
-      <h3>🔴 整理ポスト</h3>
-      <p>上場廃止が確定または高い確率で見込まれる銘柄。売買は最終売買日まで可能ですが、<strong>基本的に即時損切り推奨</strong>。</p>
+    <div class="advice-card card-seiri">
+      <h3>🔴 整理銘柄</h3>
+      <p>上場廃止が確定または高確率で見込まれる銘柄。売買は最終売買日まで可能ですが、<strong>基本的に即時損切り推奨</strong>。</p>
     </div>
-    <div class="advice-card">
-      <h3>🟠 管理ポスト</h3>
-      <p>上場廃止基準に抵触した銘柄。改善期間中ですが廃止になるリスクが非常に高い。<strong>新規購入は厳禁</strong>。</p>
+    <div class="advice-card card-kanri">
+      <h3>🟠 監理銘柄（確認中）</h3>
+      <p>上場廃止基準抵触の疑いがあり確認中の銘柄。<strong>新規購入は厳禁</strong>。整理銘柄に移行する可能性が高い。</p>
     </div>
-    <div class="advice-card">
+    <div class="advice-card card-shinsa">
+      <h3>🟡 監理銘柄（審査中）</h3>
+      <p>MBO・TOB等で上場廃止の審査中。<strong>株価が吊り上がって買ってしまうと損するケースあり</strong>。</p>
+    </div>
+    <div class="advice-card card-abolished">
       <h3>⛔ 上場廃止確定</h3>
-      <p>廃止日が確定した銘柄。<strong>最終売買日までに必ず処分</strong>が必要。最終売買日を過ぎると売れなくなります。</p>
+      <p>廃止日が確定した銘柄。<strong>最終売買日までに必ず処分</strong>が必要。過ぎると売れなくなります。</p>
     </div>
     <div class="advice-card">
       <h3>👀 その他の危険サイン</h3>
@@ -74,28 +73,16 @@ ADVICE_HTML = """
 
 def render_row(s: dict) -> str:
     icon = CATEGORY_ICON.get(s["category"], "⚠️")
-    badge = CATEGORY_BADGE.get(s["category"]) or RISK_BADGE.get(s["risk_level"], f'<span class="badge badge-high">{s["risk_level"]}</span>')
+    badge = CATEGORY_BADGE.get(s["category"], f'<span class="badge badge-kanri">{s["category"]}</span>')
     delisting = s.get("delisting_date") or "—"
     designated = s.get("designated_date") or "—"
     market = s.get("market") or "—"
     reason = s.get("reason") or ""
     name_html = f'{icon} {s["name"]}'
     if reason:
-        name_html += f'<br><small style="color:var(--text-muted)">{reason}</small>'
-    css_class = (s["risk_level"]
-                 .replace("廃止確定", "abolished")
-                 .replace("極高", "extreme")
-                 .replace("高", "high")
-                 .replace("中", "mid"))
-    return f"""
-      <tr class="row-{css_class}">
-        <td><span class="stock-code">{s['code']}</span></td>
-        <td><span class="stock-name">{name_html}</span></td>
-        <td>{market}</td>
-        <td>{badge}</td>
-        <td>{designated}</td>
-        <td class="delisting-date">{delisting}</td>
-      </tr>"""
+        name_html += f'<br><small class="reason-text">{reason}</small>'
+    cat_key = CATEGORY_KEY.get(s["category"], "kanri")
+    return f'<tr class="stock-row" data-cat="{cat_key}"><td><span class="stock-code">{s["code"]}</span></td><td class="stock-name">{name_html}</td><td>{market}</td><td>{badge}</td><td>{designated}</td><td class="delisting-date">{delisting}</td></tr>'
 
 
 def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
@@ -105,38 +92,28 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
             data = json.load(f)
         stocks = data["stocks"]
         updated_at = data["updated_at"]
-        count = data["count"]
     else:
         stocks = []
         updated_at = datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
-        count = 0
 
-    # カテゴリ別に分類・並べ替え（危険度順）
-    seiri   = [s for s in stocks if s["category"] == "整理銘柄"]
-    kakunin = [s for s in stocks if s["category"] == "監理銘柄（確認中）"]
-    shinsa  = [s for s in stocks if s["category"] == "監理銘柄（審査中）"]
-    kanri   = [s for s in stocks if s["category"] == "監理銘柄"]
-    abolished = [s for s in stocks if s["category"] == "上場廃止"]
-    kaizen  = [s for s in stocks if s["category"] == "改善期間中"]
+    seiri    = [s for s in stocks if s["category"] == "整理銘柄"]
+    kakunin  = [s for s in stocks if s["category"] == "監理銘柄（確認中）"]
+    shinsa   = [s for s in stocks if s["category"] == "監理銘柄（審査中）"]
+    kanri    = [s for s in stocks if s["category"] == "監理銘柄"]
+    abolished= [s for s in stocks if s["category"] == "上場廃止"]
+    kaizen   = [s for s in stocks if s["category"] == "改善期間中"]
     sorted_stocks = seiri + kakunin + shinsa + kanri + abolished + kaizen
 
-    rows_html = "".join(render_row(s) for s in sorted_stocks)
-
+    rows_html = "\n".join(render_row(s) for s in sorted_stocks)
     if not rows_html:
-        rows_html = """
-      <tr>
-        <td colspan="6" class="no-data">
-          ⚠️ 現在、取得できたデータがありません。<br>
-          <small>JPXサイトの構造変更またはネットワークエラーの可能性があります。</small><br>
-          <a href="https://www.jpx.co.jp/listing/others/delisting/index.html" target="_blank">→ JPX 整理ポスト一覧</a> |
-          <a href="https://www.jpx.co.jp/listing/maintenance/index.html" target="_blank">→ JPX 管理ポスト一覧</a>
-        </td>
-      </tr>"""
+        rows_html = '<tr><td colspan="6" class="no-data">⚠️ データなし — <a href="https://www.jpx.co.jp/listing/market-alerts/supervision/index.html" target="_blank">JPX公式サイト</a>をご確認ください</td></tr>'
 
-    seiri_count = len(seiri)
-    kanri_count = len(kakunin) + len(shinsa) + len(kanri)
-    abolished_count = len(abolished)
-    kaizen_count = len(kaizen)
+    n_seiri    = len(seiri)
+    n_kakunin  = len(kakunin)
+    n_shinsa   = len(shinsa)
+    n_kanri    = len(kanri)
+    n_abolished= len(abolished)
+    n_all      = len(sorted_stocks)
 
     html = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -144,192 +121,189 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>東証 危険銘柄ウォッチ 🚨</title>
-  <meta name="description" content="東京証券取引所の整理ポスト・管理ポスト・上場廃止確定銘柄を毎日自動更新">
+  <meta name="description" content="東京証券取引所の整理銘柄・監理銘柄・上場廃止確定銘柄を毎日自動更新">
   <style>
     :root {{
       --red: #e53e3e;
       --orange: #dd6b20;
       --dark-red: #9b2335;
-      --abolished: #742a2a;
       --bg: #0f0f1a;
       --card-bg: #1a1a2e;
       --border: #2d2d4e;
       --text: #e2e8f0;
-      --text-muted: #a0aec0;
+      --muted: #a0aec0;
       --accent: #f6ad55;
     }}
     * {{ box-sizing: border-box; margin: 0; padding: 0; }}
-    body {{
-      font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-    }}
-    header {{
-      background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 50%, #1a0a0a 100%);
-      border-bottom: 2px solid var(--red);
-      padding: 24px 20px;
-      text-align: center;
-    }}
-    header h1 {{
-      font-size: clamp(1.4rem, 4vw, 2.2rem);
-      color: #fff;
-      text-shadow: 0 0 20px rgba(229,62,62,0.8);
-    }}
-    header h1 .emoji {{ font-size: 1.2em; }}
-    .subtitle {{
-      color: var(--text-muted);
-      margin-top: 6px;
-      font-size: 0.9rem;
-    }}
-    .updated {{
-      margin-top: 10px;
-      font-size: 0.82rem;
-      color: var(--accent);
-    }}
+    body {{ font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }}
+
+    /* ヘッダー */
+    header {{ background: linear-gradient(135deg,#1a0a0a,#2d1515,#1a0a0a); border-bottom: 2px solid var(--red); padding: 22px 20px; text-align: center; }}
+    header h1 {{ font-size: clamp(1.4rem,4vw,2.2rem); color:#fff; text-shadow: 0 0 20px rgba(229,62,62,.8); }}
+    .subtitle {{ color: var(--muted); margin-top: 5px; font-size: .9rem; }}
+    .updated {{ margin-top: 8px; font-size: .82rem; color: var(--accent); }}
+    .blink {{ animation: blink 1.2s step-end infinite; }}
+    @keyframes blink {{ 50% {{ opacity:0; }} }}
+
     .container {{ max-width: 1100px; margin: 0 auto; padding: 20px; }}
 
     /* 統計カード */
-    .stats {{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 12px;
-      margin: 20px 0;
+    .stats {{ display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 10px; margin: 18px 0; }}
+    .stat-card {{ background: var(--card-bg); border-radius: 12px; padding: 14px; text-align: center; border: 1px solid var(--border); cursor: pointer; transition: border-color .2s, transform .1s; }}
+    .stat-card:hover {{ transform: translateY(-2px); }}
+    .stat-card.s-seiri    {{ border-color: #e53e3e; }}
+    .stat-card.s-kanri    {{ border-color: #dd6b20; }}
+    .stat-card.s-abolished{{ border-color: #742a2a; background: #1a0a0a; }}
+    .stat-card.s-all      {{ border-color: #4a4a7a; }}
+    .stat-number {{ font-size: 2rem; font-weight: bold; }}
+    .s-seiri     .stat-number {{ color: #fc8181; }}
+    .s-kanri     .stat-number {{ color: var(--accent); }}
+    .s-abolished .stat-number {{ color: #fc8181; }}
+    .s-all       .stat-number {{ color: #fff; }}
+    .stat-label {{ font-size: .78rem; color: var(--muted); margin-top: 3px; }}
+
+    /* タブ＋リロードボタンバー */
+    .tab-bar {{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 20px 0 0;
+      flex-wrap: wrap;
     }}
-    .stat-card {{
+    .reload-btn {{
+      background: #1e2a3a;
+      color: var(--accent);
+      border: 1px solid #3a5a7a;
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: .8rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .2s;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }}
+    .reload-btn:hover {{ background: #2a3a4a; }}
+    .reload-btn:active {{ transform: scale(.96); }}
+    .tab-divider {{ width: 1px; height: 28px; background: var(--border); margin: 0 4px; }}
+    .tab {{
       background: var(--card-bg);
-      border-radius: 12px;
-      padding: 16px;
-      text-align: center;
+      color: var(--muted);
       border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: .82rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all .2s;
     }}
-    .stat-card.abolished {{ border-color: var(--dark-red); background: #1a0a0a; }}
-    .stat-card.extreme {{ border-color: var(--red); }}
-    .stat-card.high {{ border-color: var(--orange); }}
-    .stat-number {{ font-size: 2.2rem; font-weight: bold; }}
-    .abolished .stat-number {{ color: #fc8181; }}
-    .extreme .stat-number {{ color: #fc8181; }}
-    .high .stat-number {{ color: var(--accent); }}
-    .stat-label {{ font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }}
+    .tab:hover {{ color: var(--text); border-color: #5a5a8a; }}
+    .tab.active {{ color: #fff; font-weight: bold; }}
+    .tab.t-all.active      {{ background: #2a2a4e; border-color: #7a7aaa; }}
+    .tab.t-seiri.active    {{ background: #4a1010; border-color: var(--red); color: #fc8181; }}
+    .tab.t-kakunin.active  {{ background: #4a2000; border-color: var(--orange); color: var(--accent); }}
+    .tab.t-shinsa.active   {{ background: #3a2a00; border-color: #b7791f; color: #fbd38d; }}
+    .tab.t-abolished.active{{ background: #2a0808; border-color: #742a2a; color: #fc8181; }}
+
+    .result-count {{ font-size: .8rem; color: var(--muted); margin-left: auto; white-space: nowrap; align-self: center; }}
 
     /* テーブル */
-    .table-wrap {{
-      overflow-x: auto;
-      background: var(--card-bg);
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      margin: 20px 0;
-    }}
+    .table-wrap {{ overflow-x: auto; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); margin: 10px 0 20px; }}
     table {{ width: 100%; border-collapse: collapse; }}
-    thead th {{
-      background: #16213e;
-      padding: 12px 14px;
-      text-align: left;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      letter-spacing: 0.05em;
-      border-bottom: 1px solid var(--border);
-      white-space: nowrap;
-    }}
-    tbody tr {{ border-bottom: 1px solid var(--border); transition: background 0.15s; }}
-    tbody tr:hover {{ background: rgba(255,255,255,0.04); }}
+    thead th {{ background: #16213e; padding: 11px 14px; text-align: left; font-size: .8rem; color: var(--muted); letter-spacing: .05em; border-bottom: 1px solid var(--border); white-space: nowrap; }}
+    tbody tr {{ border-bottom: 1px solid var(--border); transition: background .12s; }}
+    tbody tr:hover {{ background: rgba(255,255,255,.04); }}
     tbody tr:last-child {{ border-bottom: none; }}
-    td {{ padding: 11px 14px; font-size: 0.9rem; vertical-align: middle; }}
+    td {{ padding: 10px 14px; font-size: .88rem; vertical-align: middle; }}
+    tr[data-cat="seiri"]    {{ background: rgba(229,62,62,.07); }}
+    tr[data-cat="abolished"]{{ background: rgba(116,42,42,.13); }}
+    tr.hidden {{ display: none; }}
 
-    .row-abolished {{ background: rgba(116, 42, 42, 0.15); }}
-    .row-extreme {{ background: rgba(229, 62, 62, 0.08); }}
-
-    .stock-code {{
-      font-family: monospace;
-      font-weight: bold;
-      font-size: 1rem;
-      color: var(--accent);
-    }}
+    .stock-code {{ font-family: monospace; font-weight: bold; font-size: .98rem; color: var(--accent); }}
     .stock-name {{ font-weight: 500; }}
+    .reason-text {{ color: var(--muted); font-size: .78rem; }}
     .delisting-date {{ color: #fc8181; font-weight: bold; }}
 
     /* バッジ */
-    .badge {{
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      white-space: nowrap;
-    }}
-    .badge-abolished {{ background: var(--dark-red); color: #fff; border: 1px solid #fc8181; }}
-    .badge-extreme {{ background: var(--red); color: #fff; }}
-    .badge-high {{ background: var(--orange); color: #fff; }}
-    .badge-kanri-kakunin {{ background: #c05621; color: #fff; }}
-    .badge-kanri-shinsa {{ background: #975a16; color: #fff; }}
+    .badge {{ display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: .74rem; font-weight: bold; white-space: nowrap; }}
+    .badge-seiri    {{ background: var(--red);    color:#fff; }}
+    .badge-kakunin  {{ background: #c05621;       color:#fff; }}
+    .badge-shinsa   {{ background: #975a16;       color:#fff; }}
+    .badge-kanri    {{ background: var(--orange); color:#fff; }}
+    .badge-abolished{{ background: var(--dark-red); color:#fff; border:1px solid #fc8181; }}
+    .badge-kaizen   {{ background: #744210;       color:#fff; }}
 
-    .no-data {{ text-align: center; padding: 40px; color: var(--text-muted); line-height: 2; }}
-    .no-data a {{ color: var(--accent); }}
+    .no-data {{ text-align:center; padding:40px; color:var(--muted); line-height:2; }}
+    .no-data a {{ color:var(--accent); }}
 
-    /* アドバイスセクション */
+    /* アドバイス */
     .advice {{ margin: 30px 0; }}
-    .advice h2 {{ font-size: 1.2rem; margin-bottom: 16px; color: var(--accent); }}
-    .advice-grid {{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-    }}
-    .advice-card {{
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
-    }}
-    .advice-card h3 {{ font-size: 0.95rem; margin-bottom: 8px; }}
-    .advice-card p, .advice-card li {{ font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }}
-    .advice-card ul {{ padding-left: 16px; }}
+    .advice h2 {{ font-size: 1.1rem; margin-bottom: 14px; color: var(--accent); }}
+    .advice-grid {{ display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 12px; }}
+    .advice-card {{ background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }}
+    .advice-card h3 {{ font-size: .9rem; margin-bottom: 7px; }}
+    .advice-card p, .advice-card li {{ font-size: .82rem; color: var(--muted); line-height: 1.6; }}
+    .advice-card ul {{ padding-left: 15px; }}
+    .card-seiri    {{ border-color: var(--red); }}
+    .card-kanri    {{ border-color: var(--orange); }}
+    .card-shinsa   {{ border-color: #b7791f; }}
+    .card-abolished{{ border-color: var(--dark-red); }}
 
-    /* フッター */
-    footer {{
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border);
-      margin-top: 20px;
-    }}
-    footer a {{ color: var(--accent); text-decoration: none; }}
+    footer {{ text-align:center; padding:28px 20px; font-size:.76rem; color:var(--muted); border-top:1px solid var(--border); margin-top:20px; }}
+    footer a {{ color:var(--accent); text-decoration:none; }}
 
-    .blink {{ animation: blink 1.2s step-end infinite; }}
-    @keyframes blink {{ 50% {{ opacity: 0; }} }}
-
-    @media (max-width: 600px) {{
-      td, th {{ padding: 8px 10px; font-size: 0.8rem; }}
+    @media(max-width:600px) {{
+      td,th {{ padding:8px 8px; font-size:.78rem; }}
+      .tab {{ padding:6px 10px; font-size:.76rem; }}
     }}
   </style>
 </head>
 <body>
 
 <header>
-  <h1><span class="emoji">🚨</span> 東証 危険銘柄ウォッチ <span class="blink">●</span></h1>
-  <p class="subtitle">整理ポスト・管理ポスト・上場廃止確定銘柄を毎日自動更新</p>
+  <h1>🚨 東証 危険銘柄ウォッチ <span class="blink">●</span></h1>
+  <p class="subtitle">整理銘柄・監理銘柄・上場廃止確定銘柄を毎日自動更新</p>
   <p class="updated">🕐 最終更新: {updated_at} JST ／ データ出典: 東京証券取引所（JPX）</p>
 </header>
 
 <div class="container">
 
   <div class="stats">
-    <div class="stat-card abolished">
-      <div class="stat-number">{abolished_count}</div>
-      <div class="stat-label">⛔ 上場廃止確定</div>
+    <div class="stat-card s-seiri"    onclick="setTab('seiri')">
+      <div class="stat-number">{n_seiri}</div>
+      <div class="stat-label">🔴 整理銘柄</div>
     </div>
-    <div class="stat-card extreme">
-      <div class="stat-number">{seiri_count}</div>
-      <div class="stat-label">🔴 整理ポスト</div>
+    <div class="stat-card s-kanri"   onclick="setTab('kakunin')">
+      <div class="stat-number">{n_kakunin}</div>
+      <div class="stat-label">🟠 監理（確認中）</div>
     </div>
-    <div class="stat-card high">
-      <div class="stat-number">{kanri_count}</div>
-      <div class="stat-label">🟠 管理ポスト</div>
+    <div class="stat-card s-kanri"   onclick="setTab('shinsa')">
+      <div class="stat-number">{n_shinsa}</div>
+      <div class="stat-label">🟡 監理（審査中）</div>
     </div>
-    <div class="stat-card">
-      <div class="stat-number" style="color:#fff">{count}</div>
-      <div class="stat-label">⚠️ 合計危険銘柄</div>
+    <div class="stat-card s-abolished" onclick="setTab('abolished')">
+      <div class="stat-number">{n_abolished}</div>
+      <div class="stat-label">⛔ 上場廃止</div>
     </div>
+    <div class="stat-card s-all"     onclick="setTab('all')">
+      <div class="stat-number">{n_all}</div>
+      <div class="stat-label">⚠️ 合計</div>
+    </div>
+  </div>
+
+  <!-- タブバー -->
+  <div class="tab-bar">
+    <button class="reload-btn" onclick="hardReload()" title="Shift+Ctrl+R でも可">
+      ↺ 強制リロード
+    </button>
+    <div class="tab-divider"></div>
+    <button class="tab t-all active"      onclick="setTab('all')">すべて <span class="tab-cnt"></span></button>
+    <button class="tab t-seiri"           onclick="setTab('seiri')">🔴 整理銘柄</button>
+    <button class="tab t-kakunin"         onclick="setTab('kakunin')">🟠 監理（確認中）</button>
+    <button class="tab t-shinsa"          onclick="setTab('shinsa')">🟡 監理（審査中）</button>
+    <button class="tab t-abolished"       onclick="setTab('abolished')">⛔ 上場廃止</button>
+    <span class="result-count" id="result-count">{n_all} 件</span>
   </div>
 
   <div class="table-wrap">
@@ -344,8 +318,8 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
           <th>廃止日 / 期限</th>
         </tr>
       </thead>
-      <tbody>
-        {rows_html}
+      <tbody id="stock-tbody">
+{rows_html}
       </tbody>
     </table>
   </div>
@@ -356,15 +330,52 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
 
 <footer>
   <p>
-    データ出典: <a href="https://www.jpx.co.jp/listing/others/delisting/index.html" target="_blank">JPX 整理ポスト</a> ／
-    <a href="https://www.jpx.co.jp/listing/maintenance/index.html" target="_blank">JPX 管理ポスト</a>
+    データ出典:
+    <a href="https://www.jpx.co.jp/listing/market-alerts/supervision/index.html" target="_blank">JPX 監理・整理銘柄一覧</a> ／
+    <a href="https://www.jpx.co.jp/listing/stocks/delisted/index.html" target="_blank">JPX 上場廃止銘柄一覧</a>
   </p>
-  <p style="margin-top:8px">
-    ⚠️ 本サイトは情報提供のみを目的としています。投資判断は自己責任でお願いします。<br>
-    データは自動取得のため、最新情報はJPX公式サイトをご確認ください。
-  </p>
+  <p style="margin-top:8px">⚠️ 本サイトは情報提供のみを目的としています。投資判断は自己責任でお願いします。</p>
   <p style="margin-top:8px">毎日 20:00 JST 自動更新 ／ <a href="https://github.com/jpn-x/kabu-watch" target="_blank">GitHub</a></p>
 </footer>
+
+<script>
+  var currentTab = 'all';
+
+  function setTab(cat) {{
+    currentTab = cat;
+    // タブのアクティブ切り替え
+    document.querySelectorAll('.tab').forEach(function(t) {{
+      t.classList.remove('active');
+      if (t.classList.contains('t-' + cat)) t.classList.add('active');
+    }});
+    // 行の表示切り替え
+    var rows = document.querySelectorAll('#stock-tbody .stock-row');
+    var count = 0;
+    rows.forEach(function(r) {{
+      if (cat === 'all' || r.dataset.cat === cat) {{
+        r.classList.remove('hidden');
+        count++;
+      }} else {{
+        r.classList.add('hidden');
+      }}
+    }});
+    document.getElementById('result-count').textContent = count + ' 件';
+  }}
+
+  function hardReload() {{
+    // キャッシュバスターを付けてリロード（Shift+Ctrl+R 相当）
+    var url = location.pathname + '?t=' + Date.now();
+    location.href = url;
+  }}
+
+  // Shift+Ctrl+R をキャッチして強制リロード
+  document.addEventListener('keydown', function(e) {{
+    if (e.shiftKey && (e.ctrlKey || e.metaKey) && e.key === 'R') {{
+      e.preventDefault();
+      hardReload();
+    }}
+  }});
+</script>
 
 </body>
 </html>
@@ -372,7 +383,7 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
 
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"[INFO] {out_path} を生成しました")
+    print(f"[INFO] {out_path} を生成しました ({len(sorted_stocks)}件)")
 
 
 if __name__ == "__main__":
