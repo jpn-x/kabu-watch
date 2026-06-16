@@ -11,13 +11,15 @@ JST = timezone(timedelta(hours=9))
 RISK_BADGE = {
     "廃止確定": '<span class="badge badge-abolished">廃止確定</span>',
     "極高": '<span class="badge badge-extreme">整理ポスト</span>',
-    "高": '<span class="badge badge-high">管理ポスト</span>',
+    "高": '<span class="badge badge-high">監理ポスト</span>',
+    "中": '<span class="badge badge-mid">改善期間中</span>',
 }
 
 CATEGORY_ICON = {
     "整理ポスト": "🔴",
-    "管理ポスト": "🟠",
-    "上場廃止決定": "⛔",
+    "管理ポスト（監理）": "🟠",
+    "上場廃止": "⛔",
+    "改善期間中": "🟡",
 }
 
 TIPS = [
@@ -88,11 +90,12 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
         updated_at = datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
         count = 0
 
-    # カテゴリ別に分類
-    abolished = [s for s in stocks if s["category"] == "上場廃止決定"]
+    # カテゴリ別に分類・並べ替え
+    abolished = [s for s in stocks if s["category"] == "上場廃止"]
     seiri = [s for s in stocks if s["category"] == "整理ポスト"]
-    kanri = [s for s in stocks if s["category"] == "管理ポスト"]
-    sorted_stocks = abolished + seiri + kanri
+    kanri = [s for s in stocks if s["category"] == "管理ポスト（監理）"]
+    kaizen = [s for s in stocks if s["category"] == "改善期間中"]
+    sorted_stocks = abolished + seiri + kanri + kaizen
 
     rows_html = "".join(render_row(s) for s in sorted_stocks)
 
@@ -110,6 +113,7 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
     abolished_count = len(abolished)
     seiri_count = len(seiri)
     kanri_count = len(kanri)
+    kaizen_count = len(kaizen)
 
     html = f"""<!DOCTYPE html>
 <html lang="ja">

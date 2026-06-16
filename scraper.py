@@ -115,71 +115,101 @@ def parse_table_rows(soup, category: str, risk_level: str) -> list[dict]:
     return stocks
 
 
-def parse_seiri(soup) -> list[dict]:
-    """整理ポスト — 廃止日が入ることが多い"""
-    stocks = parse_table_rows(soup, "整理ポスト", "極高")
-
-    # テーブルが見つからない場合: リンクテキストからコードを拾う
-    if not stocks and soup:
-        for a in soup.select("a[href*='code=']"):
-            m = re.search(r"code=(\d{4})", a["href"])
-            if m:
-                stocks.append({
-                    "code": m.group(1),
-                    "name": a.get_text(strip=True),
-                    "market": "",
-                    "designated_date": "",
-                    "delisting_date": "",
-                    "category": "整理ポスト",
-                    "risk_level": "極高",
-                })
+def parse_supervision(soup) -> list[dict]:
+    """監理・整理銘柄一覧ページ — 監理ポストと整理ポストが混在"""
+    if soup is None:
+        return []
+    stocks = []
+    # 複数テーブルを走査し、ヘッダーを見てカテゴリを判定
+    for table in soup.select("table"):
+        header_text = table.get_text()
+        if "整理" in header_text:
+            cat, risk = "整理ポスト", "極高"
+        else:
+            cat, risk = "管理ポスト（監理）", "高"
+        for row in table.select("tbody tr"):
+            cells = [td.get_text(strip=True) for td in row.select("td")]
+            if len(cells) < 2:
+                continue
+            code = re.sub(r"\D", "", cells[0])[:4]
+            if not re.match(r"^\d{4}$", code):
+                continue
+            stocks.append({
+                "code": code,
+                "name": cells[1] if len(cells) > 1 else "",
+                "market": cells[2] if len(cells) > 2 else "",
+                "designated_date": cells[3] if len(cells) > 3 else "",
+                "delisting_date": cells[4] if len(cells) > 4 else "",
+                "category": cat,
+                "risk_level": risk,
+            })
     return stocks
 
 
-def parse_kanri(soup) -> list[dict]:
-    stocks = parse_table_rows(soup, "管理ポスト", "高")
-    if not stocks and soup:
-        for a in soup.select("a[href*='code=']"):
-            m = re.search(r"code=(\d{4})", a["href"])
-            if m:
-                stocks.append({
-                    "code": m.group(1),
-                    "name": a.get_text(strip=True),
-                    "market": "",
-                    "designated_date": "",
-                    "delisting_date": "",
-                    "category": "管理ポスト",
-                    "risk_level": "高",
-                })
+def parse_improvement(soup) -> list[dict]:
+    """改善期間該当銘柄"""
+    return parse_table_rows(soup, "改善期間中", "中")
+
+
+def parse_delisted(soup) -> list[dict]:
+    """上場廃止銘柄一覧（直近のもの）"""
+    if soup is None:
+        return []
+    stocks = []
+    for row in soup.select("table tbody tr"):
+        cells = [td.get_text(strip=True) for td in row.select("td")]
+        if len(cells) < 2:
+            continue
+        code = re.sub(r"\D", "", cells[0])[:4]
+        if not re.match(r"^\d{4}$", code):
+            continue
+        stocks.append({
+            "code": code,
+            "name": cells[1] if len(cells) > 1 else "",
+            "market": cells[2] if len(cells) > 2 else "",
+            "designated_date": "",
+            "delisting_date": cells[3] if len(cells) > 3 else "",
+            "category": "上場廃止",
+            "risk_level": "廃止確定",
+        })
     return stocks
 
 
 # ---- メイン ----
 
 URLS = {
-    "整理ポスト": "https://www.jpx.co.jp/listing/others/delisting/index.html",
-    "管理ポスト": "https://www.jpx.co.jp/listing/maintenance/index.html",
+    "監理・整理銘柄": "https://www.jpx.co.jp/listing/market-alerts/supervision/index.html",
+    "改善期間": "https://www.jpx.co.jp/listing/market-alerts/improvement-period/index.html",
+    "上場廃止": "https://www.jpx.co.jp/listing/stocks/delisted/index.html",
 }
 
 
 def scrape_jpx() -> list[dict]:
     all_stocks: list[dict] = []
 
-    print("[INFO] 整理ポスト取得中...")
-    soup = fetch(URLS["整理ポスト"])
-    stocks = parse_seiri(soup)
+    print("[INFO] 監理・整理銘柄一覧取得中...")
+    soup = fetch(URLS["監理・整理銘柄"])
+    stocks = parse_supervision(soup)
     print(f"[INFO]   → {len(stocks)}件")
     all_stocks.extend(stocks)
 
     time.sleep(3)
 
-    print("[INFO] 管理ポスト取得中...")
-    soup = fetch(URLS["管理ポスト"])
-    stocks = parse_kanri(soup)
+    print("[INFO] 改善期間該当銘柄取得中...")
+    soup = fetch(URLS["改善期間"])
+    stocks = parse_improvement(soup)
     print(f"[INFO]   → {len(stocks)}件")
     all_stocks.extend(stocks)
 
-    # 重複除去
+    time.sleep(3)
+
+    print("[INFO] 上場廃止銘柄一覧取得中...")
+    soup = fetch(URLS["上場廃止"])
+    stocks = parse_delisted(soup)
+    print(f"[INFO]   → {len(stocks)}件")
+    all_stocks.extend(stocks)
+
+    # 重複除去（code+categoryキー）
     seen: set[str] = set()
     unique: list[dict] = []
     for s in all_stocks:
