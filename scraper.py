@@ -110,25 +110,43 @@ def _extract_code(text: str) -> str:
     return m.group(1) if m else ""
 
 
+def _heading_before(tag) -> str:
+    """tableの直前にある見出し（h2/h3/h4/strong/caption）テキストを返す"""
+    # まずcaptionを確認
+    cap = tag.find("caption")
+    if cap:
+        return cap.get_text()
+    # 直前の兄弟要素を遡って見出しを探す
+    for sib in tag.find_previous_siblings():
+        text = sib.get_text(strip=True)
+        if text and sib.name in ("h2", "h3", "h4", "h5", "p", "div", "strong"):
+            return text
+    return ""
+
+
+def _supervision_category(heading: str) -> tuple[str, str]:
+    """見出しテキストからカテゴリとリスクレベルを返す"""
+    if "整理" in heading:
+        return "整理銘柄", "極高"
+    if "確認中" in heading:
+        return "監理銘柄（確認中）", "高"
+    if "審査中" in heading:
+        return "監理銘柄（審査中）", "高"
+    return "監理銘柄", "高"
+
+
 def parse_supervision(soup) -> list[dict]:
     """
     監理・整理銘柄一覧ページ
     列順: 指定年月日 | 銘柄名 | コード | 市場区分 | 詳細 | 備考
-    テーブルが複数あり、見出し（caption/th）で監理/整理を判別する
+    テーブル直前の見出しで 確認中/審査中/整理 を判別する
     """
     if soup is None:
         return []
     stocks = []
     for table in soup.select("table"):
-        # キャプションや直前の見出しでカテゴリ判定
-        caption = table.find("caption")
-        cap_text = caption.get_text() if caption else ""
-        # th全テキストも補助に使う
-        header_text = " ".join(th.get_text() for th in table.select("th"))
-        if "整理" in cap_text or "整理" in header_text:
-            cat, risk = "整理ポスト", "極高"
-        else:
-            cat, risk = "管理ポスト（監理）", "高"
+        heading = _heading_before(table)
+        cat, risk = _supervision_category(heading)
 
         for row in table.select("tbody tr"):
             cells = [td.get_text(strip=True) for td in row.select("td")]

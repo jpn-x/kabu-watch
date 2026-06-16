@@ -9,17 +9,29 @@ from pathlib import Path
 JST = timezone(timedelta(hours=9))
 
 RISK_BADGE = {
-    "廃止確定": '<span class="badge badge-abolished">廃止確定</span>',
-    "極高": '<span class="badge badge-extreme">整理ポスト</span>',
-    "高": '<span class="badge badge-high">監理ポスト</span>',
-    "中": '<span class="badge badge-mid">改善期間中</span>',
+    "廃止確定": '<span class="badge badge-abolished">⛔ 上場廃止</span>',
+    "極高":     '<span class="badge badge-extreme">🔴 整理銘柄</span>',
+    "高":       '<span class="badge badge-high">🟠 監理銘柄</span>',
+    "中":       '<span class="badge badge-mid">🟡 改善期間中</span>',
+}
+
+# カテゴリごとの詳細バッジ（risk_levelより優先）
+CATEGORY_BADGE = {
+    "整理銘柄":         '<span class="badge badge-extreme">🔴 整理銘柄</span>',
+    "監理銘柄（確認中）": '<span class="badge badge-kanri-kakunin">🟠 監理（確認中）</span>',
+    "監理銘柄（審査中）": '<span class="badge badge-kanri-shinsa">🟡 監理（審査中）</span>',
+    "監理銘柄":         '<span class="badge badge-high">🟠 監理銘柄</span>',
+    "上場廃止":         '<span class="badge badge-abolished">⛔ 上場廃止</span>',
+    "改善期間中":        '<span class="badge badge-mid">🟡 改善期間中</span>',
 }
 
 CATEGORY_ICON = {
-    "整理ポスト": "🔴",
-    "管理ポスト（監理）": "🟠",
-    "上場廃止": "⛔",
-    "改善期間中": "🟡",
+    "整理銘柄":         "🔴",
+    "監理銘柄（確認中）": "🟠",
+    "監理銘柄（審査中）": "🟡",
+    "監理銘柄":         "🟠",
+    "上場廃止":         "⛔",
+    "改善期間中":        "🟡",
 }
 
 TIPS = [
@@ -62,7 +74,7 @@ ADVICE_HTML = """
 
 def render_row(s: dict) -> str:
     icon = CATEGORY_ICON.get(s["category"], "⚠️")
-    badge = RISK_BADGE.get(s["risk_level"], f'<span class="badge badge-high">{s["risk_level"]}</span>')
+    badge = CATEGORY_BADGE.get(s["category"]) or RISK_BADGE.get(s["risk_level"], f'<span class="badge badge-high">{s["risk_level"]}</span>')
     delisting = s.get("delisting_date") or "—"
     designated = s.get("designated_date") or "—"
     market = s.get("market") or "—"
@@ -99,12 +111,14 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
         updated_at = datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
         count = 0
 
-    # カテゴリ別に分類・並べ替え
+    # カテゴリ別に分類・並べ替え（危険度順）
+    seiri   = [s for s in stocks if s["category"] == "整理銘柄"]
+    kakunin = [s for s in stocks if s["category"] == "監理銘柄（確認中）"]
+    shinsa  = [s for s in stocks if s["category"] == "監理銘柄（審査中）"]
+    kanri   = [s for s in stocks if s["category"] == "監理銘柄"]
     abolished = [s for s in stocks if s["category"] == "上場廃止"]
-    seiri = [s for s in stocks if s["category"] == "整理ポスト"]
-    kanri = [s for s in stocks if s["category"] == "管理ポスト（監理）"]
-    kaizen = [s for s in stocks if s["category"] == "改善期間中"]
-    sorted_stocks = abolished + seiri + kanri + kaizen
+    kaizen  = [s for s in stocks if s["category"] == "改善期間中"]
+    sorted_stocks = seiri + kakunin + shinsa + kanri + abolished + kaizen
 
     rows_html = "".join(render_row(s) for s in sorted_stocks)
 
@@ -119,9 +133,9 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
         </td>
       </tr>"""
 
-    abolished_count = len(abolished)
     seiri_count = len(seiri)
-    kanri_count = len(kanri)
+    kanri_count = len(kakunin) + len(shinsa) + len(kanri)
+    abolished_count = len(abolished)
     kaizen_count = len(kaizen)
 
     html = f"""<!DOCTYPE html>
@@ -246,6 +260,8 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
     .badge-abolished {{ background: var(--dark-red); color: #fff; border: 1px solid #fc8181; }}
     .badge-extreme {{ background: var(--red); color: #fff; }}
     .badge-high {{ background: var(--orange); color: #fff; }}
+    .badge-kanri-kakunin {{ background: #c05621; color: #fff; }}
+    .badge-kanri-shinsa {{ background: #975a16; color: #fff; }}
 
     .no-data {{ text-align: center; padding: 40px; color: var(--text-muted); line-height: 2; }}
     .no-data a {{ color: var(--accent); }}
