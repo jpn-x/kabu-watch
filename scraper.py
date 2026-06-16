@@ -154,15 +154,47 @@ def parse_supervision(soup) -> list[dict]:
     """
     監理・整理銘柄一覧ページ
     列順: 指定年月日 | 銘柄名 | コード | 市場区分 | 詳細 | 備考
-    テーブル直前の見出しで 確認中/審査中/整理 を判別する
+
+    JPXページのテーブル順は固定:
+      table[0]: 空（ナビ等）
+      table[1]: 監理銘柄（確認中）
+      table[2]: 監理銘柄（審査中）
+      table[3]: 整理銘柄
+    見出し検出を優先しつつ、失敗時はインデックスで判別する。
     """
     if soup is None:
         return []
+
+    # 行を持つテーブルだけ抽出
+    data_tables = [t for t in soup.select("table") if t.select("tbody tr")]
+
+    # テーブルインデックス → カテゴリのデフォルトマッピング（JPX固定順）
+    INDEX_CAT = {
+        0: ("監理銘柄（確認中）", "高"),
+        1: ("監理銘柄（審査中）", "高"),
+        2: ("整理銘柄", "極高"),
+    }
+
     stocks = []
-    for table in soup.select("table"):
+    for idx, table in enumerate(data_tables):
+        # 1. 見出し検出を試みる
         heading = _heading_before(table)
         cat, risk = _supervision_category(heading)
-        print(f"[INFO]   テーブル見出し: {heading[:40]!r} → {cat}")
+
+        # 2. 見出しが空 or デフォルト「監理銘柄」のままならインデックスで上書き
+        if not heading or cat == "監理銘柄":
+            # 備考列に「審査中」「確認中」「整理」が含まれるか確認
+            biko_texts = " ".join(td.get_text() for td in table.select("td:last-child"))
+            if "整理銘柄" in biko_texts or "整理" in biko_texts:
+                cat, risk = "整理銘柄", "極高"
+            elif "審査中" in biko_texts:
+                cat, risk = "監理銘柄（審査中）", "高"
+            elif "確認中" in biko_texts:
+                cat, risk = "監理銘柄（確認中）", "高"
+            else:
+                cat, risk = INDEX_CAT.get(idx, ("監理銘柄", "高"))
+
+        print(f"[INFO]   table[{idx}] 見出し={heading[:30]!r} → {cat}")
 
         for row in table.select("tbody tr"):
             cells = [td.get_text(strip=True) for td in row.select("td")]
