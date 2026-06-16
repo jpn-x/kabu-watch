@@ -1,11 +1,40 @@
 {
-  "updated_at": "2026-06-16 15:52:14",
-  "updated_at_iso": "2026-06-16T15:52:14.969719+09:00",
-  "count": 0,
-  "stocks": [],
+  "updated_at": "2026-06-16 15:55:14",
+  "updated_at_iso": "2026-06-16T15:55:14.685716+09:00",
+  "count": 3,
+  "stocks": [
+    {
+      "code": "2026",
+      "name": "（株）ジェイ・エス・ビー",
+      "market": "3480",
+      "designated_date": "プライム",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "2025",
+      "name": "（株）松屋アールアンドディ",
+      "market": "7317",
+      "designated_date": "グロース",
+      "delisting_date": "",
+      "category": "管理ポスト（監理）",
+      "risk_level": "高"
+    },
+    {
+      "code": "2026",
+      "name": "（株）テクノマセマティカル",
+      "market": "3787",
+      "designated_date": "",
+      "delisting_date": "スタンダード",
+      "category": "上場廃止",
+      "risk_level": "廃止確定"
+    }
+  ],
   "source": "東京証券取引所 (JPX)",
   "source_urls": {
-    "整理ポスト": "https://www.jpx.co.jp/listing/others/delisting/index.html",
-    "管理ポスト": "https://www.jpx.co.jp/listing/maintenance/index.html"
+    "監理・整理銘柄": "https://www.jpx.co.jp/listing/market-alerts/supervision/index.html",
+    "改善期間": "https://www.jpx.co.jp/listing/market-alerts/improvement-period/index.html",
+    "上場廃止": "https://www.jpx.co.jp/listing/stocks/delisted/index.html"
   }
 }
