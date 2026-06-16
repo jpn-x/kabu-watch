@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>東証 危険銘柄ウォッチ 🚨</title>
+  <meta name="description" content="東京証券取引所の整理ポスト・管理ポスト・上場廃止確定銘柄を毎日自動更新">
+  <style>
+    :root {
+      --red: #e53e3e;
+      --orange: #dd6b20;
+      --dark-red: #9b2335;
+      --abolished: #742a2a;
+      --bg: #0f0f1a;
+      --card-bg: #1a1a2e;
+      --border: #2d2d4e;
+      --text: #e2e8f0;
+      --text-muted: #a0aec0;
+      --accent: #f6ad55;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 50%, #1a0a0a 100%);
+      border-bottom: 2px solid var(--red);
+      padding: 24px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      color: #fff;
+      text-shadow: 0 0 20px rgba(229,62,62,0.8);
+    }
+    header h1 .emoji { font-size: 1.2em; }
+    .subtitle {
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-size: 0.9rem;
+    }
+    .updated {
+      margin-top: 10px;
+      font-size: 0.82rem;
+      color: var(--accent);
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+    /* 統計カード */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .stat-card.abolished { border-color: var(--dark-red); background: #1a0a0a; }
+    .stat-card.extreme { border-color: var(--red); }
+    .stat-card.high { border-color: var(--orange); }
+    .stat-number { font-size: 2.2rem; font-weight: bold; }
+    .abolished .stat-number { color: #fc8181; }
+    .extreme .stat-number { color: #fc8181; }
+    .high .stat-number { color: var(--accent); }
+    .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* テーブル */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 20px 0;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    thead th {
+      background: #16213e;
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+    tbody tr:hover { background: rgba(255,255,255,0.04); }
+    tbody tr:last-child { border-bottom: none; }
+    td { padding: 11px 14px; font-size: 0.9rem; vertical-align: middle; }
+
+    .row-abolished { background: rgba(116, 42, 42, 0.15); }
+    .row-extreme { background: rgba(229, 62, 62, 0.08); }
+
+    .stock-code {
+      font-family: monospace;
+      font-weight: bold;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+    .stock-name { font-weight: 500; }
+    .delisting-date { color: #fc8181; font-weight: bold; }
+
+    /* バッジ */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .badge-abolished { background: var(--dark-red); color: #fff; border: 1px solid #fc8181; }
+    .badge-extreme { background: var(--red); color: #fff; }
+    .badge-high { background: var(--orange); color: #fff; }
+
+    .no-data { text-align: center; padding: 40px; color: var(--text-muted); line-height: 2; }
+    .no-data a { color: var(--accent); }
+
+    /* アドバイスセクション */
+    .advice { margin: 30px 0; }
+    .advice h2 { font-size: 1.2rem; margin-bottom: 16px; color: var(--accent); }
+    .advice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .advice-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .advice-card h3 { font-size: 0.95rem; margin-bottom: 8px; }
+    .advice-card p, .advice-card li { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    .advice-card ul { padding-left: 16px; }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 20px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .blink { animation: blink 1.2s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    @media (max-width: 600px) {
+      td, th { padding: 8px 10px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><span class="emoji">🚨</span> 東証 危険銘柄ウォッチ <span class="blink">●</span></h1>
+  <p class="subtitle">整理ポスト・管理ポスト・上場廃止確定銘柄を毎日自動更新</p>
+  <p class="updated">🕐 最終更新: 2026-06-16 20:00:00 JST ／ データ出典: 東京証券取引所（JPX）</p>
+</header>
+
+<div class="container">
+
+  <div class="stats">
+    <div class="stat-card abolished">
+      <div class="stat-number">0</div>
+      <div class="stat-label">⛔ 上場廃止確定</div>
+    </div>
+    <div class="stat-card extreme">
+      <div class="stat-number">0</div>
+      <div class="stat-label">🔴 整理ポスト</div>
+    </div>
+    <div class="stat-card high">
+      <div class="stat-number">0</div>
+      <div class="stat-label">🟠 管理ポスト</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number" style="color:#fff">0</div>
+      <div class="stat-label">⚠️ 合計危険銘柄</div>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>コード</th>
+          <th>銘柄名</th>
+          <th>市場</th>
+          <th>ステータス</th>
+          <th>指定日</th>
+          <th>廃止日 / 期限</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      <tr>
+        <td colspan="6" class="no-data">
+          ⚠️ 現在、取得できたデータがありません。<br>
+          <small>JPXサイトの構造変更またはネットワークエラーの可能性があります。</small><br>
+          <a href="https://www.jpx.co.jp/listing/others/delisting/index.html" target="_blank">→ JPX 整理ポスト一覧</a> |
+          <a href="https://www.jpx.co.jp/listing/maintenance/index.html" target="_blank">→ JPX 管理ポスト一覧</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<section class="advice">
+  <h2>⚠️ 危険銘柄を見分けるポイント</h2>
+  <div class="advice-grid">
+    <div class="advice-card">
+      <h3>🔴 整理ポスト</h3>
+      <p>上場廃止が確定または高い確率で見込まれる銘柄。売買は最終売買日まで可能ですが、<strong>基本的に即時損切り推奨</strong>。</p>
+    </div>
+    <div class="advice-card">
+      <h3>🟠 管理ポスト</h3>
+      <p>上場廃止基準に抵触した銘柄。改善期間中ですが廃止になるリスクが非常に高い。<strong>新規購入は厳禁</strong>。</p>
+    </div>
+    <div class="advice-card">
+      <h3>⛔ 上場廃止確定</h3>
+      <p>廃止日が確定した銘柄。<strong>最終売買日までに必ず処分</strong>が必要。最終売買日を過ぎると売れなくなります。</p>
+    </div>
+    <div class="advice-card">
+      <h3>👀 その他の危険サイン</h3>
+      <ul>
+        <li>監査法人から「意見不表明」「否定的意見」</li>
+        <li>継続企業の疑義注記（GC注記）</li>
+        <li>債務超過・純資産マイナス</li>
+        <li>業績予想の大幅下方修正が連続</li>
+        <li>主要取引先・代表者の突然の変更</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+</div>
+
+<footer>
+  <p>
+    データ出典: <a href="https://www.jpx.co.jp/listing/others/delisting/index.html" target="_blank">JPX 整理ポスト</a> ／
+    <a href="https://www.jpx.co.jp/listing/maintenance/index.html" target="_blank">JPX 管理ポスト</a>
+  </p>
+  <p style="margin-top:8px">
+    ⚠️ 本サイトは情報提供のみを目的としています。投資判断は自己責任でお願いします。<br>
+    データは自動取得のため、最新情報はJPX公式サイトをご確認ください。
+  </p>
+  <p style="margin-top:8px">毎日 20:00 JST 自動更新 ／ <a href="https://github.com/jpn-x/kabu-watch" target="_blank">GitHub</a></p>
+</footer>
+
+</body>
+</html>
