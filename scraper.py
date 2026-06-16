@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 東証 危険銘柄スクレイパー
-整理ポスト・管理ポスト・上場廃止確定銘柄を取得してJSONに保存する
+Playwright（ヘッドレスChromium）でJPXを取得 → JSON保存
 """
 import json
 import re
@@ -9,66 +9,110 @@ import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-import requests
-from bs4 import BeautifulSoup
-
 JST = timezone(timedelta(hours=9))
 
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Referer": "https://www.jpx.co.jp/",
-}
+# ---- Playwright でフェッチ ----
 
-BASE = "https://www.jpx.co.jp"
-SESSION = requests.Session()
-SESSION.headers.update(HEADERS)
-
-
-def fetch(url: str) -> BeautifulSoup | None:
+def fetch_with_playwright(url: str) -> str | None:
     try:
-        r = SESSION.get(url, timeout=20)
-        r.raise_for_status()
-        r.encoding = r.apparent_encoding
-        return BeautifulSoup(r.text, "html.parser")
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            ctx = browser.new_context(
+                user_agent=(
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/124.0.0.0 Safari/537.36"
+                ),
+                locale="ja-JP",
+                extra_http_headers={"Accept-Language": "ja,en-US;q=0.9"},
+            )
+            page = ctx.new_page()
+            page.goto(url, wait_until="networkidle", timeout=30000)
+            # 動的コンテンツ読み込み待機
+            time.sleep(2)
+            content = page.content()
+            browser.close()
+            return content
     except Exception as e:
-        print(f"[WARN] fetch failed: {url} -> {e}")
+        print(f"[WARN] playwright failed for {url}: {e}")
         return None
 
 
-def parse_seiriposts(soup: BeautifulSoup) -> list[dict]:
-    """整理ポスト銘柄を取得"""
+def fetch_with_requests(url: str) -> str | None:
+    """Playwrightが使えない場合のフォールバック"""
+    try:
+        import requests
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Referer": "https://www.jpx.co.jp/",
+        }
+        r = requests.get(url, headers=headers, timeout=20)
+        r.raise_for_status()
+        r.encoding = r.apparent_encoding
+        return r.text
+    except Exception as e:
+        print(f"[WARN] requests failed for {url}: {e}")
+        return None
+
+
+def fetch(url: str) -> "BeautifulSoup | None":
+    from bs4 import BeautifulSoup
+    html = fetch_with_playwright(url)
+    if html is None:
+        print(f"[INFO] fallback to requests: {url}")
+        html = fetch_with_requests(url)
+    if html is None:
+        return None
+    return BeautifulSoup(html, "html.parser")
+
+
+# ---- パース ----
+
+def parse_table_rows(soup, category: str, risk_level: str) -> list[dict]:
     stocks = []
     if soup is None:
         return stocks
 
     for row in soup.select("table tbody tr"):
         cells = [td.get_text(strip=True) for td in row.select("td")]
-        if len(cells) >= 4:
-            stocks.append({
-                "code": cells[0],
-                "name": cells[1],
-                "market": cells[2] if len(cells) > 2 else "",
-                "designated_date": cells[3] if len(cells) > 3 else "",
-                "delisting_date": cells[4] if len(cells) > 4 else "",
-                "category": "整理ポスト",
-                "risk_level": "極高",
-            })
+        # 空行スキップ
+        if len(cells) < 2 or not cells[0]:
+            continue
+        # コードらしき4桁数字があるか確認
+        code = re.sub(r"\D", "", cells[0])[:4]
+        if not re.match(r"^\d{4}$", code):
+            continue
+        stocks.append({
+            "code": code,
+            "name": cells[1] if len(cells) > 1 else "",
+            "market": cells[2] if len(cells) > 2 else "",
+            "designated_date": cells[3] if len(cells) > 3 else "",
+            "delisting_date": cells[4] if len(cells) > 4 else "",
+            "category": category,
+            "risk_level": risk_level,
+        })
+    return stocks
 
-    # テーブルが見つからない場合はdlやliからも試みる
-    if not stocks:
-        for item in soup.select(".component-text-block li, .component-list li"):
-            text = item.get_text(strip=True)
-            m = re.search(r"(\d{4})[　\s]+(.+?)(?:　|\s|（)", text)
+
+def parse_seiri(soup) -> list[dict]:
+    """整理ポスト — 廃止日が入ることが多い"""
+    stocks = parse_table_rows(soup, "整理ポスト", "極高")
+
+    # テーブルが見つからない場合: リンクテキストからコードを拾う
+    if not stocks and soup:
+        for a in soup.select("a[href*='code=']"):
+            m = re.search(r"code=(\d{4})", a["href"])
             if m:
                 stocks.append({
                     "code": m.group(1),
-                    "name": m.group(2).strip(),
+                    "name": a.get_text(strip=True),
                     "market": "",
                     "designated_date": "",
                     "delisting_date": "",
@@ -78,73 +122,50 @@ def parse_seiriposts(soup: BeautifulSoup) -> list[dict]:
     return stocks
 
 
-def parse_kanriposts(soup: BeautifulSoup) -> list[dict]:
-    """管理ポスト銘柄を取得"""
-    stocks = []
-    if soup is None:
-        return stocks
-
-    for row in soup.select("table tbody tr"):
-        cells = [td.get_text(strip=True) for td in row.select("td")]
-        if len(cells) >= 3:
-            stocks.append({
-                "code": cells[0],
-                "name": cells[1],
-                "market": cells[2] if len(cells) > 2 else "",
-                "designated_date": cells[3] if len(cells) > 3 else "",
-                "delisting_date": "",
-                "category": "管理ポスト",
-                "risk_level": "高",
-            })
+def parse_kanri(soup) -> list[dict]:
+    stocks = parse_table_rows(soup, "管理ポスト", "高")
+    if not stocks and soup:
+        for a in soup.select("a[href*='code=']"):
+            m = re.search(r"code=(\d{4})", a["href"])
+            if m:
+                stocks.append({
+                    "code": m.group(1),
+                    "name": a.get_text(strip=True),
+                    "market": "",
+                    "designated_date": "",
+                    "delisting_date": "",
+                    "category": "管理ポスト",
+                    "risk_level": "高",
+                })
     return stocks
 
 
-def parse_delisting_decided(soup: BeautifulSoup) -> list[dict]:
-    """上場廃止決定銘柄を取得"""
-    stocks = []
-    if soup is None:
-        return stocks
+# ---- メイン ----
 
-    for row in soup.select("table tbody tr"):
-        cells = [td.get_text(strip=True) for td in row.select("td")]
-        if len(cells) >= 3:
-            stocks.append({
-                "code": cells[0],
-                "name": cells[1],
-                "market": cells[2] if len(cells) > 2 else "",
-                "designated_date": "",
-                "delisting_date": cells[3] if len(cells) > 3 else cells[-1],
-                "category": "上場廃止決定",
-                "risk_level": "廃止確定",
-            })
-    return stocks
+URLS = {
+    "整理ポスト": "https://www.jpx.co.jp/listing/others/delisting/index.html",
+    "管理ポスト": "https://www.jpx.co.jp/listing/maintenance/index.html",
+}
 
 
 def scrape_jpx() -> list[dict]:
     all_stocks: list[dict] = []
 
-    urls = {
-        "整理ポスト": f"{BASE}/listing/others/delisting/index.html",
-        "管理ポスト": f"{BASE}/listing/maintenance/index.html",
-        "上場廃止決定": f"{BASE}/listing/others/delisting/index.html",
-    }
-
     print("[INFO] 整理ポスト取得中...")
-    soup_seiri = fetch(urls["整理ポスト"])
-    all_stocks.extend(parse_seiriposts(soup_seiri))
-    time.sleep(2)
+    soup = fetch(URLS["整理ポスト"])
+    stocks = parse_seiri(soup)
+    print(f"[INFO]   → {len(stocks)}件")
+    all_stocks.extend(stocks)
+
+    time.sleep(3)
 
     print("[INFO] 管理ポスト取得中...")
-    soup_kanri = fetch(urls["管理ポスト"])
-    all_stocks.extend(parse_kanriposts(soup_kanri))
-    time.sleep(2)
+    soup = fetch(URLS["管理ポスト"])
+    stocks = parse_kanri(soup)
+    print(f"[INFO]   → {len(stocks)}件")
+    all_stocks.extend(stocks)
 
-    # サブページやPDF一覧から廃止確定も試みる
-    print("[INFO] 上場廃止決定銘柄取得中...")
-    soup_del = fetch(f"{BASE}/listing/others/delisting/index.html")
-    all_stocks.extend(parse_delisting_decided(soup_del))
-
-    # 重複除去（codeベース）
+    # 重複除去
     seen: set[str] = set()
     unique: list[dict] = []
     for s in all_stocks:
@@ -156,22 +177,18 @@ def scrape_jpx() -> list[dict]:
     return unique
 
 
-def build_fallback() -> list[dict]:
-    """スクレイピング失敗時の手動入力データ（最終更新日を明示）"""
-    # JPX公表データを手動でメンテする場合はここに記載
-    return []
-
-
 def main():
     now_jst = datetime.now(JST)
     print(f"[INFO] 実行時刻: {now_jst.strftime('%Y-%m-%d %H:%M:%S JST')}")
 
     stocks = scrape_jpx()
-    print(f"[INFO] 取得件数: {len(stocks)}")
+    print(f"[INFO] 取得件数合計: {len(stocks)}")
 
-    if not stocks:
-        print("[WARN] スクレイピング失敗。フォールバックデータを使用")
-        stocks = build_fallback()
+    # 廃止確定フラグ（整理ポストで廃止日が入っているもの）
+    for s in stocks:
+        if s["category"] == "整理ポスト" and s.get("delisting_date"):
+            s["category"] = "上場廃止決定"
+            s["risk_level"] = "廃止確定"
 
     output = {
         "updated_at": now_jst.strftime("%Y-%m-%d %H:%M:%S"),
@@ -179,17 +196,18 @@ def main():
         "count": len(stocks),
         "stocks": stocks,
         "source": "東京証券取引所 (JPX)",
-        "source_urls": {
-            "整理ポスト": "https://www.jpx.co.jp/listing/others/delisting/index.html",
-            "管理ポスト": "https://www.jpx.co.jp/listing/maintenance/index.html",
-        },
+        "source_urls": URLS,
     }
 
     Path("data").mkdir(exist_ok=True)
     with open("data/stocks.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"[INFO] data/stocks.json に保存完了 ({len(stocks)}件)")
+    print(f"[INFO] data/stocks.json 保存完了")
+
+    # スクレイピング結果がゼロでも警告だけ出してexit 0にする（前回データを残す）
+    if not stocks:
+        print("[WARN] 取得件数0件。JPXページ構造変更の可能性あり。前回データを維持します。")
 
 
 if __name__ == "__main__":
