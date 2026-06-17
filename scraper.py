@@ -343,11 +343,23 @@ def main():
     stocks = scrape_jpx()
     print(f"[INFO] 取得件数合計: {len(stocks)}")
 
-    # 廃止確定フラグ（整理ポストで廃止日が入っているもの）
+    # 整理銘柄に廃止日を付与（上場廃止リストとクロス参照）
+    delisting_map = {
+        s["code"]: s["delisting_date"]
+        for s in stocks
+        if s["category"] == "上場廃止" and s.get("delisting_date")
+    }
     for s in stocks:
-        if s["category"] == "整理ポスト" and s.get("delisting_date"):
-            s["category"] = "上場廃止決定"
-            s["risk_level"] = "廃止確定"
+        if s["category"] == "整理銘柄" and not s.get("delisting_date"):
+            if s["code"] in delisting_map:
+                s["delisting_date"] = delisting_map[s["code"]]
+
+    # 整理銘柄と上場廃止で重複しているコードは整理銘柄を優先、上場廃止エントリを除去
+    seiri_codes = {s["code"] for s in stocks if s["category"] == "整理銘柄"}
+    stocks = [
+        s for s in stocks
+        if not (s["category"] == "上場廃止" and s["code"] in seiri_codes)
+    ]
 
     output = {
         "updated_at": now_jst.strftime("%Y-%m-%d %H:%M:%S"),
