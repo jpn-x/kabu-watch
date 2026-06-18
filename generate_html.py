@@ -63,8 +63,9 @@ def primary_month(s: dict) -> str:
 def render_row(s: dict) -> str:
     icon  = CATEGORY_ICON.get(s["category"], "⚠️")
     badge = CATEGORY_BADGE.get(s["category"], f'<span class="badge badge-kanri">{s["category"]}</span>')
-    delisting  = s.get("delisting_date") or "—"
-    designated = s.get("designated_date") or "—"
+    delisting      = s.get("delisting_date") or "—"
+    last_trading   = s.get("last_trading_date") or "—"
+    designated     = s.get("designated_date") or "—"
     market = s.get("market") or "—"
     reason = s.get("reason") or ""
     name_html = f'{icon} {s["name"]}'
@@ -73,9 +74,14 @@ def render_row(s: dict) -> str:
     cat_key = CATEGORY_KEY.get(s["category"], "kanri")
     month   = primary_month(s)
     delisting_html = f'<span class="delisting-date">{delisting}</span>' if delisting != "—" else "—"
+    # 最終売買日: 廃止日がある銘柄のみ強調表示
+    if last_trading != "—":
+        ltd_html = f'<span class="last-trading-date">{last_trading}<small class="ltd-label">最終売買</small></span>'
+    else:
+        ltd_html = '<span class="ltd-none">—</span>'
     return (
         f'<tr class="stock-row" data-cat="{cat_key}" data-month="{month}">'
-        f'<td><span class="stock-code">{s["code"]}</span></td>'
+        f'<td class="td-code-block"><span class="stock-code">{s["code"]}</span>{ltd_html}</td>'
         f'<td class="stock-name">{name_html}</td>'
         f'<td>{market}</td>'
         f'<td>{badge}</td>'
@@ -243,6 +249,23 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
     .badge-abolished{{background:var(--dark-red);color:#fff;border:1px solid #fc8181;}}
     .badge-kaizen   {{background:#744210;color:#fff;}}
 
+    /* コード＋最終売買日セル */
+    .td-code-block{{white-space:nowrap;vertical-align:middle;}}
+    .last-trading-date{{
+      display:block; margin-top:4px;
+      background:linear-gradient(135deg,#7a1010,#b22222);
+      color:#fff; font-weight:bold; font-size:.78rem;
+      padding:3px 8px; border-radius:6px;
+      letter-spacing:.04em; line-height:1.3;
+      box-shadow:0 0 8px rgba(220,50,50,.5);
+      white-space:nowrap;
+    }}
+    .ltd-label{{
+      display:block; font-size:.62rem; font-weight:normal;
+      color:rgba(255,255,255,.75); letter-spacing:.02em; margin-top:1px;
+    }}
+    .ltd-none{{color:var(--muted);font-size:.82rem;}}
+
     .no-data{{text-align:center;padding:40px;color:var(--muted);line-height:2;}}
     .no-data a{{color:var(--accent);}}
 
@@ -326,8 +349,9 @@ def generate(data_path: str = "data/stocks.json", out_path: str = "index.html"):
     <table>
       <thead>
         <tr>
-          <th>コード</th><th>銘柄名</th><th>市場</th>
-          <th>ステータス</th><th>指定日</th><th>廃止日 / 期限</th>
+          <th>コード<br><small style="font-weight:normal;color:#e07070">最終売買日</small></th>
+          <th>銘柄名</th><th>市場</th>
+          <th>ステータス</th><th>指定日</th><th>上場廃止日</th>
         </tr>
       </thead>
       <tbody id="stock-tbody">

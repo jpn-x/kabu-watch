@@ -11,6 +11,21 @@ from pathlib import Path
 
 JST = timezone(timedelta(hours=9))
 
+
+def _calc_last_trading_day(delisting_date_str: str) -> str:
+    """上場廃止日の前営業日（最終売買日）を計算。土日は金曜に繰り上げ。"""
+    if not delisting_date_str:
+        return ""
+    try:
+        d = datetime.strptime(delisting_date_str, "%Y/%m/%d")
+        last = d - timedelta(days=1)
+        while last.weekday() >= 5:  # 5=土, 6=日
+            last -= timedelta(days=1)
+        return last.strftime("%Y/%m/%d")
+    except ValueError:
+        return ""
+
+
 # ---- Playwright でフェッチ ----
 
 def fetch_with_playwright(url: str) -> str | None:
@@ -360,6 +375,10 @@ def main():
         s for s in stocks
         if not (s["category"] == "上場廃止" and s["code"] in seiri_codes)
     ]
+
+    # 最終売買日を計算（上場廃止日の前営業日）
+    for s in stocks:
+        s["last_trading_date"] = _calc_last_trading_day(s.get("delisting_date", ""))
 
     output = {
         "updated_at": now_jst.strftime("%Y-%m-%d %H:%M:%S"),
