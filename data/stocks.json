@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-23 00:48:34",
-  "updated_at_iso": "2026-06-23T00:48:34.180475+09:00",
+  "updated_at": "2026-06-23 22:39:30",
+  "updated_at_iso": "2026-06-23T22:39:30.113550+09:00",
   "count": 133,
   "stocks": [
     {
@@ -384,16 +384,6 @@
       "last_trading_date": "2026/06/25"
     },
     {
-      "code": "2686",
-      "name": "（株）ジーフット",
-      "market": "スタンダード",
-      "designated_date": "2026/05/22",
-      "delisting_date": "2026/06/23",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/06/22"
-    },
-    {
       "code": "7851",
       "name": "カワセコンピュータサプライ（株）",
       "market": "スタンダード",
@@ -536,6 +526,17 @@
       "risk_level": "廃止確定",
       "reason": "ＨＥＲＯＺの完全子会社化（株式交換）",
       "last_trading_date": "2026/06/25"
+    },
+    {
+      "code": "2686",
+      "name": "（株）ジーフット",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/23",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（株式併合）",
+      "last_trading_date": "2026/06/22"
     },
     {
       "code": "4659",
