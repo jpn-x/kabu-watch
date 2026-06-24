@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-23 22:39:30",
-  "updated_at_iso": "2026-06-23T22:39:30.113550+09:00",
+  "updated_at": "2026-06-24 22:14:02",
+  "updated_at_iso": "2026-06-24T22:14:02.319696+09:00",
   "count": 133,
   "stocks": [
     {
@@ -344,16 +344,6 @@
       "last_trading_date": "2026/09/30"
     },
     {
-      "code": "6403",
-      "name": "水道機工（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/06/01",
-      "delisting_date": "2026/06/24",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/06/23"
-    },
-    {
       "code": "3546",
       "name": "アレンザホールディングス（株）",
       "market": "プライム",
@@ -526,6 +516,17 @@
       "risk_level": "廃止確定",
       "reason": "ＨＥＲＯＺの完全子会社化（株式交換）",
       "last_trading_date": "2026/06/25"
+    },
+    {
+      "code": "6403",
+      "name": "水道機工（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/24",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）",
+      "last_trading_date": "2026/06/23"
     },
     {
       "code": "2686",
