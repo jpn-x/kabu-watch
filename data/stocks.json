@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-24 22:14:02",
-  "updated_at_iso": "2026-06-24T22:14:02.319696+09:00",
+  "updated_at": "2026-06-25 22:13:14",
+  "updated_at_iso": "2026-06-25T22:13:14.738745+09:00",
   "count": 133,
   "stocks": [
     {
@@ -264,16 +264,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "7317",
-      "name": "（株）松屋アールアンドディ",
-      "market": "グロース",
-      "designated_date": "2025/12/15",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "3645",
       "name": "（株）メディカルネット",
       "market": "グロース",
@@ -304,6 +294,16 @@
       "last_trading_date": ""
     },
     {
+      "code": "7317",
+      "name": "（株）松屋アールアンドディ",
+      "market": "グロース",
+      "designated_date": "2026/06/25",
+      "delisting_date": "2026/07/17",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/07/16"
+    },
+    {
       "code": "7940",
       "name": "ウェーブロックホールディングス（株）",
       "market": "スタンダード",
@@ -312,16 +312,6 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/07/08"
-    },
-    {
-      "code": "7922",
-      "name": "三光産業（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/06/05",
-      "delisting_date": "2026/06/25",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/06/24"
     },
     {
       "code": "3787",
@@ -516,6 +506,17 @@
       "risk_level": "廃止確定",
       "reason": "ＨＥＲＯＺの完全子会社化（株式交換）",
       "last_trading_date": "2026/06/25"
+    },
+    {
+      "code": "7922",
+      "name": "三光産業（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/25",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）",
+      "last_trading_date": "2026/06/24"
     },
     {
       "code": "6403",
