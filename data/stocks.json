@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-25 22:13:14",
-  "updated_at_iso": "2026-06-25T22:13:14.738745+09:00",
+  "updated_at": "2026-06-26 22:06:02",
+  "updated_at_iso": "2026-06-26T22:06:02.055708+09:00",
   "count": 133,
   "stocks": [
     {
@@ -334,16 +334,6 @@
       "last_trading_date": "2026/09/30"
     },
     {
-      "code": "3546",
-      "name": "アレンザホールディングス（株）",
-      "market": "プライム",
-      "designated_date": "2026/05/27",
-      "delisting_date": "2026/06/26",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/06/25"
-    },
-    {
       "code": "6147",
       "name": "（株）ヤマザキ",
       "market": "スタンダード",
@@ -352,16 +342,6 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/30"
-    },
-    {
-      "code": "5856",
-      "name": "（株）エルアイイーエイチ",
-      "market": "スタンダード",
-      "designated_date": "2026/05/25",
-      "delisting_date": "2026/06/26",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/06/25"
     },
     {
       "code": "7851",
@@ -505,6 +485,28 @@
       "category": "上場廃止",
       "risk_level": "廃止確定",
       "reason": "ＨＥＲＯＺの完全子会社化（株式交換）",
+      "last_trading_date": "2026/06/25"
+    },
+    {
+      "code": "3546",
+      "name": "アレンザホールディングス（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/06/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）",
+      "last_trading_date": "2026/06/25"
+    },
+    {
+      "code": "5856",
+      "name": "（株）エルアイイーエイチ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/06/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "内部管理体制確認書が提出され、内部管理体制等が適切に整備されていない又は適切に運用される見込みがなくなったと当取引所が認める場合",
       "last_trading_date": "2026/06/25"
     },
     {
