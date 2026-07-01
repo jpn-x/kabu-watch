@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-30 22:06:46",
-  "updated_at_iso": "2026-06-30T22:06:46.250550+09:00",
+  "updated_at": "2026-07-01 22:32:27",
+  "updated_at_iso": "2026-07-01T22:32:27.232273+09:00",
   "count": 135,
   "stocks": [
     {
@@ -194,16 +194,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "5903",
-      "name": "シンポ（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/04/28",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "3271",
       "name": "（株）ＴＨＥグローバル社",
       "market": "スタンダード",
@@ -314,6 +304,16 @@
       "last_trading_date": ""
     },
     {
+      "code": "5903",
+      "name": "シンポ（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/07/01",
+      "delisting_date": "2026/07/22",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/07/21"
+    },
+    {
       "code": "7317",
       "name": "（株）松屋アールアンドディ",
       "market": "グロース",
@@ -384,16 +384,6 @@
       "last_trading_date": "2026/09/18"
     },
     {
-      "code": "3681",
-      "name": "（株）ブイキューブ",
-      "market": "プライム",
-      "designated_date": "2026/04/30",
-      "delisting_date": "2026/07/01",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/06/30"
-    },
-    {
       "code": "3670",
       "name": "協立情報通信（株）",
       "market": "スタンダード",
@@ -462,6 +452,17 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/30"
+    },
+    {
+      "code": "3681",
+      "name": "（株）ブイキューブ",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/07/01",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合",
+      "last_trading_date": "2026/06/30"
     },
     {
       "code": "3198",
