@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-07-07 22:13:30",
-  "updated_at_iso": "2026-07-07T22:13:30.553807+09:00",
-  "count": 135,
+  "updated_at": "2026-07-08 21:15:58",
+  "updated_at_iso": "2026-07-08T21:15:58.093083+09:00",
+  "count": 136,
   "stocks": [
+    {
+      "code": "2997",
+      "name": "（株）ストレージ王",
+      "market": "グロース",
+      "designated_date": "2026/07/08",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "5380",
       "name": "新東（株）",
