@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-08 21:15:58",
-  "updated_at_iso": "2026-07-08T21:15:58.093083+09:00",
+  "updated_at": "2026-07-09 22:44:43",
+  "updated_at_iso": "2026-07-09T22:44:43.866067+09:00",
   "count": 136,
   "stocks": [
     {
@@ -204,16 +204,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "3271",
-      "name": "（株）ＴＨＥグローバル社",
-      "market": "スタンダード",
-      "designated_date": "2026/04/06",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "4626",
       "name": "太陽ホールディングス（株）",
       "market": "プライム",
@@ -304,6 +294,16 @@
       "last_trading_date": ""
     },
     {
+      "code": "3271",
+      "name": "（株）ＴＨＥグローバル社",
+      "market": "スタンダード",
+      "designated_date": "2026/07/09",
+      "delisting_date": "2026/07/28",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/07/27"
+    },
+    {
       "code": "6197",
       "name": "（株）ソラスト",
       "market": "プライム",
@@ -332,16 +332,6 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/07/16"
-    },
-    {
-      "code": "7940",
-      "name": "ウェーブロックホールディングス（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/06/18",
-      "delisting_date": "2026/07/09",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/07/08"
     },
     {
       "code": "3787",
@@ -462,6 +452,17 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/30"
+    },
+    {
+      "code": "7940",
+      "name": "ウェーブロックホールディングス（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/07/09",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（株式併合）",
+      "last_trading_date": "2026/07/08"
     },
     {
       "code": "3681",
