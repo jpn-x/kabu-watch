@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-07-09 22:44:43",
-  "updated_at_iso": "2026-07-09T22:44:43.866067+09:00",
-  "count": 136,
+  "updated_at": "2026-07-10 22:06:40",
+  "updated_at_iso": "2026-07-10T22:06:40.623917+09:00",
+  "count": 137,
   "stocks": [
+    {
+      "code": "7523",
+      "name": "アールビバン（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/07/10",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "2997",
       "name": "（株）ストレージ王",
