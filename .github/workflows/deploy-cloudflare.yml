@@ -3,7 +3,7 @@ name: Deploy to Cloudflare
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["蜊ｱ髯ｺ驫俶氛繝・・繧ｿ閾ｪ蜍墓峩譁ｰ"]
+    workflows: ["危険銘柄データ自動更新"]
     types: [completed]
 
 permissions:
