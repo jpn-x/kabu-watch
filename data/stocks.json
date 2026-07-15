@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-14 21:06:31",
-  "updated_at_iso": "2026-07-14T21:06:31.785742+09:00",
-  "count": 137,
+  "updated_at": "2026-07-15 21:10:46",
+  "updated_at_iso": "2026-07-15T21:10:46.872410+09:00",
+  "count": 139,
   "stocks": [
     {
       "code": "7523",
@@ -194,16 +194,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "8283",
-      "name": "（株）ＰＡＬＴＡＣ",
-      "market": "プライム",
-      "designated_date": "2026/05/11",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "4626",
       "name": "太陽ホールディングス（株）",
       "market": "プライム",
@@ -264,6 +254,16 @@
       "last_trading_date": ""
     },
     {
+      "code": "5103",
+      "name": "昭和ホールディングス（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/07/14",
+      "delisting_date": "",
+      "category": "監理銘柄（審査中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
       "code": "3645",
       "name": "（株）メディカルネット",
       "market": "グロース",
@@ -292,6 +292,16 @@
       "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
+    },
+    {
+      "code": "8283",
+      "name": "（株）ＰＡＬＴＡＣ",
+      "market": "プライム",
+      "designated_date": "2026/07/15",
+      "delisting_date": "2026/08/10",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/08/07"
     },
     {
       "code": "4171",
@@ -462,6 +472,17 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/30"
+    },
+    {
+      "code": "6096",
+      "name": "（株）レアジョブ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/07/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "学研ホールディングスの完全子会社化（株式交換）",
+      "last_trading_date": "2026/07/28"
     },
     {
       "code": "7940",
