@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-15 21:10:46",
-  "updated_at_iso": "2026-07-15T21:10:46.872410+09:00",
-  "count": 139,
+  "updated_at": "2026-07-16 21:15:48",
+  "updated_at_iso": "2026-07-16T21:15:48.539460+09:00",
+  "count": 140,
   "stocks": [
     {
       "code": "7523",
@@ -354,18 +354,18 @@
       "last_trading_date": "2026/07/16"
     },
     {
-      "code": "3787",
-      "name": "（株）テクノマセマティカル",
-      "market": "スタンダード",
-      "designated_date": "2026/06/03",
-      "delisting_date": "2026/10/01",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/09/30"
-    },
-    {
       "code": "2763",
       "name": "（株）エフティグループ",
+      "market": "スタンダード",
+      "designated_date": "2026/06/03",
+      "delisting_date": "2026/07/30",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/07/29"
+    },
+    {
+      "code": "3787",
+      "name": "（株）テクノマセマティカル",
       "market": "スタンダード",
       "designated_date": "2026/06/03",
       "delisting_date": "2026/10/01",
@@ -472,6 +472,17 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/30"
+    },
+    {
+      "code": "4367",
+      "name": "広栄化学（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/07/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "住友化学の完全子会社化（株式交換）",
+      "last_trading_date": "2026/07/29"
     },
     {
       "code": "6096",
