@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-23 21:20:09",
-  "updated_at_iso": "2026-07-23T21:20:09.527397+09:00",
+  "updated_at": "2026-07-24 21:15:08",
+  "updated_at_iso": "2026-07-24T21:15:08.207018+09:00",
   "count": 140,
   "stocks": [
     {
@@ -244,16 +244,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "5103",
-      "name": "昭和ホールディングス（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/07/14",
-      "delisting_date": "",
-      "category": "監理銘柄（審査中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "3645",
       "name": "（株）メディカルネット",
       "market": "グロース",
@@ -282,6 +272,16 @@
       "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
+    },
+    {
+      "code": "5103",
+      "name": "昭和ホールディングス（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/07/24",
+      "delisting_date": "2026/08/25",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/08/24"
     },
     {
       "code": "1382",
