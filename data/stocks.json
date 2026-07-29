@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-07-28 21:49:40",
-  "updated_at_iso": "2026-07-28T21:49:40.086954+09:00",
-  "count": 140,
+  "updated_at": "2026-07-29 21:56:50",
+  "updated_at_iso": "2026-07-29T21:56:50.526897+09:00",
+  "count": 141,
   "stocks": [
+    {
+      "code": "4722",
+      "name": "フューチャー（株）",
+      "market": "プライム",
+      "designated_date": "2026/07/29",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "7523",
       "name": "アールビバン（株）",
