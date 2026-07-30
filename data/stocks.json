@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-07-29 21:56:50",
-  "updated_at_iso": "2026-07-29T21:56:50.526897+09:00",
-  "count": 141,
+  "updated_at": "2026-07-30 21:25:27",
+  "updated_at_iso": "2026-07-30T21:25:27.718541+09:00",
+  "count": 140,
   "stocks": [
     {
       "code": "4722",
@@ -64,16 +64,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "2162",
-      "name": "ｎｍｓ　ホールディングス（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/05/29",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "4800",
       "name": "オリコン（株）",
       "market": "スタンダード",
@@ -118,16 +108,6 @@
       "name": "（株）ジモティー",
       "market": "グロース",
       "designated_date": "2026/05/15",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "5644",
-      "name": "（株）メタルアート",
-      "market": "スタンダード",
-      "designated_date": "2026/05/14",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
       "risk_level": "高",
@@ -284,6 +264,16 @@
       "last_trading_date": ""
     },
     {
+      "code": "2162",
+      "name": "ｎｍｓ　ホールディングス（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/07/30",
+      "delisting_date": "2026/08/28",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/08/27"
+    },
+    {
       "code": "5103",
       "name": "昭和ホールディングス（株）",
       "market": "スタンダード",
@@ -332,16 +322,6 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/08/05"
-    },
-    {
-      "code": "2763",
-      "name": "（株）エフティグループ",
-      "market": "スタンダード",
-      "designated_date": "2026/06/03",
-      "delisting_date": "2026/07/30",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/07/29"
     },
     {
       "code": "3787",
@@ -452,6 +432,17 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/30"
+    },
+    {
+      "code": "2763",
+      "name": "（株）エフティグループ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/07/30",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "光通信の完全子会社化（株式交換）",
+      "last_trading_date": "2026/07/29"
     },
     {
       "code": "4367",
