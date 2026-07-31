@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-07-30 21:25:27",
-  "updated_at_iso": "2026-07-30T21:25:27.718541+09:00",
-  "count": 140,
+  "updated_at": "2026-07-31 21:51:29",
+  "updated_at_iso": "2026-07-31T21:51:29.651833+09:00",
+  "count": 142,
   "stocks": [
+    {
+      "code": "9110",
+      "name": "ＮＳユナイテッド海運（株）",
+      "market": "プライム",
+      "designated_date": "2026/07/31",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "4722",
       "name": "フューチャー（株）",
@@ -230,6 +240,16 @@
       "designated_date": "2026/02/17",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "3856",
+      "name": "Ａｂａｌａｎｃｅ（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/07/31",
+      "delisting_date": "",
+      "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
     },
