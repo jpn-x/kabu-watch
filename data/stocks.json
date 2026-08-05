@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-08-04 21:54:50",
-  "updated_at_iso": "2026-08-04T21:54:50.933991+09:00",
-  "count": 143,
+  "updated_at": "2026-08-05 21:49:03",
+  "updated_at_iso": "2026-08-05T21:49:03.363255+09:00",
+  "count": 144,
   "stocks": [
+    {
+      "code": "4320",
+      "name": "（株）ＣＥホールディングス",
+      "market": "スタンダード",
+      "designated_date": "2026/08/05",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "3276",
       "name": "（株）ＪＰＭＣ",
