@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-12 20:41:01",
-  "updated_at_iso": "2026-08-12T20:41:01.137455+09:00",
+  "updated_at": "2026-08-13 20:41:21",
+  "updated_at_iso": "2026-08-13T20:41:21.898553+09:00",
   "count": 145,
   "stocks": [
     {
@@ -344,16 +344,6 @@
       "last_trading_date": "2026/12/31"
     },
     {
-      "code": "4171",
-      "name": "（株）グローバルインフォメーション",
-      "market": "スタンダード",
-      "designated_date": "2026/07/13",
-      "delisting_date": "2026/08/13",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/08/12"
-    },
-    {
       "code": "3787",
       "name": "（株）テクノマセマティカル",
       "market": "スタンダード",
@@ -462,6 +452,17 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/30"
+    },
+    {
+      "code": "4171",
+      "name": "（株）グローバルインフォメーション",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/08/13",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式等売渡請求による取得）",
+      "last_trading_date": "2026/08/12"
     },
     {
       "code": "8283",
