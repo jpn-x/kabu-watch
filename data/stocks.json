@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-08-13 20:41:21",
-  "updated_at_iso": "2026-08-13T20:41:21.898553+09:00",
-  "count": 145,
+  "updated_at": "2026-08-14 20:38:19",
+  "updated_at_iso": "2026-08-14T20:38:19.977843+09:00",
+  "count": 147,
   "stocks": [
     {
       "code": "3676",
@@ -452,6 +452,28 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/30"
+    },
+    {
+      "code": "3079",
+      "name": "ディーブイエックス（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/08/28",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "オルバディーブイエックスヘルスケアの完全子会社化（株式交換）",
+      "last_trading_date": "2026/08/27"
+    },
+    {
+      "code": "5660",
+      "name": "神鋼鋼線工業（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/08/28",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "神戸製鋼所の完全子会社化（株式交換）",
+      "last_trading_date": "2026/08/27"
     },
     {
       "code": "4171",
