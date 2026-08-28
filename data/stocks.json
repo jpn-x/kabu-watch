@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-08-28 05:52:32",
-  "updated_at_iso": "2026-08-28T05:52:32.698196+09:00",
-  "count": 149,
+  "updated_at": "2026-08-29 06:17:25",
+  "updated_at_iso": "2026-08-29T06:17:25.267448+09:00",
+  "count": 150,
   "stocks": [
+    {
+      "code": "4812",
+      "name": "（株）電通総研",
+      "market": "プライム",
+      "designated_date": "2026/08/28",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "7743",
       "name": "（株）シード",
@@ -144,30 +154,10 @@
       "last_trading_date": ""
     },
     {
-      "code": "7082",
-      "name": "（株）ジモティー",
-      "market": "グロース",
-      "designated_date": "2026/05/15",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "9691",
       "name": "（株）両毛システムズ",
       "market": "スタンダード",
       "designated_date": "2026/05/14",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "2180",
-      "name": "（株）サニーサイドアップグループ",
-      "market": "スタンダード",
-      "designated_date": "2026/05/13",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
       "risk_level": "高",
@@ -294,6 +284,26 @@
       "last_trading_date": ""
     },
     {
+      "code": "7082",
+      "name": "（株）ジモティー",
+      "market": "グロース",
+      "designated_date": "2026/08/28",
+      "delisting_date": "2026/09/29",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/09/28"
+    },
+    {
+      "code": "2180",
+      "name": "（株）サニーサイドアップグループ",
+      "market": "スタンダード",
+      "designated_date": "2026/08/28",
+      "delisting_date": "2026/09/16",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/09/15"
+    },
+    {
       "code": "3856",
       "name": "Ａｂａｌａｎｃｅ（株）",
       "market": "スタンダード",
@@ -332,16 +342,6 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/01"
-    },
-    {
-      "code": "2162",
-      "name": "ｎｍｓ　ホールディングス（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/07/30",
-      "delisting_date": "2026/08/28",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/08/27"
     },
     {
       "code": "1382",
@@ -483,6 +483,17 @@
       "category": "上場廃止",
       "risk_level": "廃止確定",
       "reason": "神戸製鋼所の完全子会社化（株式交換）",
+      "last_trading_date": "2026/08/27"
+    },
+    {
+      "code": "2162",
+      "name": "ｎｍｓ　ホールディングス（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/08/28",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式等売渡請求による取得）",
       "last_trading_date": "2026/08/27"
     },
     {
