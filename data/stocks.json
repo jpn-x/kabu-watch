@@ -1,8 +1,38 @@
 {
-  "updated_at": "2026-08-31 00:08:13",
-  "updated_at_iso": "2026-08-31T00:08:13.670420+09:00",
-  "count": 150,
+  "updated_at": "2026-09-01 02:46:35",
+  "updated_at_iso": "2026-09-01T02:46:35.778665+09:00",
+  "count": 153,
   "stocks": [
+    {
+      "code": "8254",
+      "name": "（株）さいか屋",
+      "market": "スタンダード",
+      "designated_date": "2026/09/01",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "4760",
+      "name": "（株）アルファ",
+      "market": "スタンダード",
+      "designated_date": "2026/09/01",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "2404",
+      "name": "（株）鉄人化ホールディングス",
+      "market": "スタンダード",
+      "designated_date": "2026/09/01",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "4812",
       "name": "（株）電通総研",
@@ -234,16 +264,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "5202",
-      "name": "日本板硝子（株）",
-      "market": "プライム",
-      "designated_date": "2026/03/24",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "4464",
       "name": "（株）ソフト９９コーポレーション",
       "market": "スタンダード",
@@ -282,6 +302,16 @@
       "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
+    },
+    {
+      "code": "5202",
+      "name": "日本板硝子（株）",
+      "market": "プライム",
+      "designated_date": "2026/08/31",
+      "delisting_date": "2026/09/28",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/09/25"
     },
     {
       "code": "7082",
