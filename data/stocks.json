@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-09-01 02:46:35",
-  "updated_at_iso": "2026-09-01T02:46:35.778665+09:00",
-  "count": 153,
+  "updated_at": "2026-09-02 00:21:27",
+  "updated_at_iso": "2026-09-02T00:21:27.277845+09:00",
+  "count": 158,
   "stocks": [
+    {
+      "code": "4420",
+      "name": "イーソル（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/09/01",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "8254",
       "name": "（株）さいか屋",
@@ -284,8 +294,8 @@
       "last_trading_date": ""
     },
     {
-      "code": "9229",
-      "name": "（株）サンウェルズ",
+      "code": "6615",
+      "name": "ユー・エム・シー・エレクトロニクス（株）",
       "market": "プライム",
       "designated_date": "2026/04/01",
       "delisting_date": "",
@@ -294,8 +304,8 @@
       "last_trading_date": ""
     },
     {
-      "code": "6615",
-      "name": "ユー・エム・シー・エレクトロニクス（株）",
+      "code": "9229",
+      "name": "（株）サンウェルズ",
       "market": "プライム",
       "designated_date": "2026/04/01",
       "delisting_date": "",
@@ -492,6 +502,50 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/30"
+    },
+    {
+      "code": "6486",
+      "name": "イーグル工業（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/09/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "NOK Groupの完全子会社化（株式移転）",
+      "last_trading_date": "2026/09/28"
+    },
+    {
+      "code": "7240",
+      "name": "ＮＯＫ（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/09/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "NOK Groupの完全子会社化（株式移転）",
+      "last_trading_date": "2026/09/28"
+    },
+    {
+      "code": "9223",
+      "name": "（株）ＡＳＮＯＶＡ",
+      "market": "グロース",
+      "designated_date": "",
+      "delisting_date": "2026/09/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ASNOVA Companiesの完全子会社化（株式移転）",
+      "last_trading_date": "2026/09/28"
+    },
+    {
+      "code": "9508",
+      "name": "九州電力（株）",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/09/29",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "キューデンホールディングスの完全子会社化（株式移転）",
+      "last_trading_date": "2026/09/28"
     },
     {
       "code": "3079",
