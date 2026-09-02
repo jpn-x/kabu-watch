@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-02 00:21:27",
-  "updated_at_iso": "2026-09-02T00:21:27.277845+09:00",
-  "count": 158,
+  "updated_at": "2026-09-02 23:51:42",
+  "updated_at_iso": "2026-09-02T23:51:42.890080+09:00",
+  "count": 157,
   "stocks": [
     {
       "code": "4420",
@@ -294,16 +294,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "6615",
-      "name": "ユー・エム・シー・エレクトロニクス（株）",
-      "market": "プライム",
-      "designated_date": "2026/04/01",
-      "delisting_date": "",
-      "category": "監理銘柄（審査中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "9229",
       "name": "（株）サンウェルズ",
       "market": "プライム",
@@ -372,16 +362,6 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/11"
-    },
-    {
-      "code": "3480",
-      "name": "（株）ジェイ・エス・ビー",
-      "market": "プライム",
-      "designated_date": "2026/08/10",
-      "delisting_date": "2026/09/02",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/09/01"
     },
     {
       "code": "1382",
@@ -546,6 +526,17 @@
       "risk_level": "廃止確定",
       "reason": "キューデンホールディングスの完全子会社化（株式移転）",
       "last_trading_date": "2026/09/28"
+    },
+    {
+      "code": "3480",
+      "name": "（株）ジェイ・エス・ビー",
+      "market": "プライム",
+      "designated_date": "",
+      "delisting_date": "2026/09/02",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式等売渡請求による取得）",
+      "last_trading_date": "2026/09/01"
     },
     {
       "code": "3079",
