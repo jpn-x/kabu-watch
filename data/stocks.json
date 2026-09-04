@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-03 23:50:05",
-  "updated_at_iso": "2026-09-03T23:50:05.361111+09:00",
-  "count": 157,
+  "updated_at": "2026-09-04 23:39:55",
+  "updated_at_iso": "2026-09-04T23:39:55.691328+09:00",
+  "count": 156,
   "stocks": [
     {
       "code": "4420",
@@ -280,16 +280,6 @@
       "designated_date": "2026/02/17",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "3645",
-      "name": "（株）メディカルネット",
-      "market": "グロース",
-      "designated_date": "2026/06/01",
-      "delisting_date": "",
-      "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
     },
