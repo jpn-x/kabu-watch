@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-06 22:52:05",
-  "updated_at_iso": "2026-09-06T22:52:05.463300+09:00",
+  "updated_at": "2026-09-08 01:14:09",
+  "updated_at_iso": "2026-09-08T01:14:09.308165+09:00",
   "count": 156,
   "stocks": [
     {
@@ -164,16 +164,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "4800",
-      "name": "オリコン（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/05/28",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "5484",
       "name": "東北特殊鋼（株）",
       "market": "スタンダード",
@@ -292,6 +282,16 @@
       "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
+    },
+    {
+      "code": "4800",
+      "name": "オリコン（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/09/07",
+      "delisting_date": "2026/09/28",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/09/25"
     },
     {
       "code": "5202",
