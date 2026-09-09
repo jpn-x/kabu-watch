@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-09-08 23:50:25",
-  "updated_at_iso": "2026-09-08T23:50:25.858402+09:00",
-  "count": 157,
+  "updated_at": "2026-09-09 23:57:20",
+  "updated_at_iso": "2026-09-09T23:57:20.309171+09:00",
+  "count": 158,
   "stocks": [
+    {
+      "code": "3989",
+      "name": "シェアリングテクノロジー（株）",
+      "market": "グロース",
+      "designated_date": "2026/09/09",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "7475",
       "name": "アルビス（株）",
