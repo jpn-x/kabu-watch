@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-16 00:21:43",
-  "updated_at_iso": "2026-09-16T00:21:43.629796+09:00",
+  "updated_at": "2026-09-17 00:14:11",
+  "updated_at_iso": "2026-09-17T00:14:11.183756+09:00",
   "count": 160,
   "stocks": [
     {
@@ -44,38 +44,18 @@
       "last_trading_date": ""
     },
     {
-      "code": "4420",
-      "name": "イーソル（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/09/01",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "8254",
-      "name": "（株）さいか屋",
-      "market": "スタンダード",
-      "designated_date": "2026/09/01",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "4760",
-      "name": "（株）アルファ",
-      "market": "スタンダード",
-      "designated_date": "2026/09/01",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "2404",
       "name": "（株）鉄人化ホールディングス",
+      "market": "スタンダード",
+      "designated_date": "2026/09/01",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "4420",
+      "name": "イーソル（株）",
       "market": "スタンダード",
       "designated_date": "2026/09/01",
       "delisting_date": "",
@@ -204,30 +184,10 @@
       "last_trading_date": ""
     },
     {
-      "code": "5484",
-      "name": "東北特殊鋼（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/05/15",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "8141",
       "name": "新光商事（株）",
       "market": "プライム",
       "designated_date": "2026/05/15",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "9691",
-      "name": "（株）両毛システムズ",
-      "market": "スタンダード",
-      "designated_date": "2026/05/14",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
       "risk_level": "高",
@@ -304,6 +264,46 @@
       "last_trading_date": ""
     },
     {
+      "code": "9691",
+      "name": "（株）両毛システムズ",
+      "market": "スタンダード",
+      "designated_date": "2026/09/16",
+      "delisting_date": "2026/10/09",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/10/08"
+    },
+    {
+      "code": "8254",
+      "name": "（株）さいか屋",
+      "market": "スタンダード",
+      "designated_date": "2026/09/16",
+      "delisting_date": "2027/03/01",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2027/02/26"
+    },
+    {
+      "code": "4760",
+      "name": "（株）アルファ",
+      "market": "スタンダード",
+      "designated_date": "2026/09/16",
+      "delisting_date": "2027/03/01",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2027/02/26"
+    },
+    {
+      "code": "5484",
+      "name": "東北特殊鋼（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/09/16",
+      "delisting_date": "2026/10/19",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/10/16"
+    },
+    {
       "code": "7490",
       "name": "日新商事（株）",
       "market": "スタンダード",
@@ -352,16 +352,6 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/09/28"
-    },
-    {
-      "code": "2180",
-      "name": "（株）サニーサイドアップグループ",
-      "market": "スタンダード",
-      "designated_date": "2026/08/28",
-      "delisting_date": "2026/09/16",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/09/15"
     },
     {
       "code": "3856",
@@ -546,6 +536,17 @@
       "risk_level": "廃止確定",
       "reason": "キューデンホールディングスの完全子会社化（株式移転）",
       "last_trading_date": "2026/09/28"
+    },
+    {
+      "code": "2180",
+      "name": "（株）サニーサイドアップグループ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/09/16",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）",
+      "last_trading_date": "2026/09/15"
     },
     {
       "code": "1909",
