@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-09-17 00:14:11",
-  "updated_at_iso": "2026-09-17T00:14:11.183756+09:00",
+  "updated_at": "2026-09-18 00:23:02",
+  "updated_at_iso": "2026-09-18T00:23:02.346281+09:00",
   "count": 160,
   "stocks": [
+    {
+      "code": "6977",
+      "name": "（株）日本抵抗器製作所",
+      "market": "スタンダード",
+      "designated_date": "2026/09/17",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "2612",
       "name": "かどや製油（株）",
@@ -38,16 +48,6 @@
       "name": "アルビス（株）",
       "market": "プライム",
       "designated_date": "2026/09/08",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "2404",
-      "name": "（株）鉄人化ホールディングス",
-      "market": "スタンダード",
-      "designated_date": "2026/09/01",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
       "risk_level": "高",
