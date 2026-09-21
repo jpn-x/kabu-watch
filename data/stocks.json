@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-20 23:24:02",
-  "updated_at_iso": "2026-09-20T23:24:02.432951+09:00",
+  "updated_at": "2026-09-22 01:43:27",
+  "updated_at_iso": "2026-09-22T01:43:27.958274+09:00",
   "count": 160,
   "stocks": [
     {
@@ -414,16 +414,6 @@
       "last_trading_date": "2026/09/30"
     },
     {
-      "code": "9914",
-      "name": "（株）植松商会",
-      "market": "スタンダード",
-      "designated_date": "2026/05/13",
-      "delisting_date": "2026/09/21",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/09/18"
-    },
-    {
       "code": "3670",
       "name": "協立情報通信（株）",
       "market": "スタンダード",
@@ -536,6 +526,17 @@
       "risk_level": "廃止確定",
       "reason": "キューデンホールディングスの完全子会社化（株式移転）",
       "last_trading_date": "2026/09/28"
+    },
+    {
+      "code": "9914",
+      "name": "（株）植松商会",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/09/21",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "上場維持基準への不適合",
+      "last_trading_date": "2026/09/18"
     },
     {
       "code": "2180",
