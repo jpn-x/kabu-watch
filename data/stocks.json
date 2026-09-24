@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-24 00:14:43",
-  "updated_at_iso": "2026-09-24T00:14:43.474913+09:00",
+  "updated_at": "2026-09-25 00:38:39",
+  "updated_at_iso": "2026-09-25T00:38:39.143885+09:00",
   "count": 160,
   "stocks": [
     {
@@ -428,10 +428,10 @@
       "name": "（株）山大",
       "market": "スタンダード",
       "designated_date": "2026/04/22",
-      "delisting_date": "2026/10/01",
+      "delisting_date": "2026/09/28",
       "category": "整理銘柄",
       "risk_level": "極高",
-      "last_trading_date": "2026/09/30"
+      "last_trading_date": "2026/09/25"
     },
     {
       "code": "7709",
