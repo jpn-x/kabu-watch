@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-09-25 00:38:39",
-  "updated_at_iso": "2026-09-25T00:38:39.143885+09:00",
-  "count": 160,
+  "updated_at": "2026-09-26 00:41:59",
+  "updated_at_iso": "2026-09-26T00:41:59.177832+09:00",
+  "count": 161,
   "stocks": [
+    {
+      "code": "7133",
+      "name": "ＨＹＵＧＡ　ＰＲＩＭＡＲＹ　ＣＡＲＥ（株）",
+      "market": "グロース",
+      "designated_date": "2026/09/25",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "6977",
       "name": "（株）日本抵抗器製作所",
@@ -364,16 +374,6 @@
       "last_trading_date": "2026/09/25"
     },
     {
-      "code": "1948",
-      "name": "（株）弘電社",
-      "market": "スタンダード",
-      "designated_date": "2026/08/25",
-      "delisting_date": "2026/09/25",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/09/24"
-    },
-    {
       "code": "1382",
       "name": "（株）ホーブ",
       "market": "スタンダード",
@@ -526,6 +526,17 @@
       "risk_level": "廃止確定",
       "reason": "キューデンホールディングスの完全子会社化（株式移転）",
       "last_trading_date": "2026/09/28"
+    },
+    {
+      "code": "1948",
+      "name": "（株）弘電社",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/09/25",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "他社による買収（公開買付け、株式併合）",
+      "last_trading_date": "2026/09/24"
     },
     {
       "code": "9914",
