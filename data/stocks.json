@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-26 00:41:59",
-  "updated_at_iso": "2026-09-26T00:41:59.177832+09:00",
+  "updated_at": "2026-09-26 23:49:27",
+  "updated_at_iso": "2026-09-26T23:49:27.299236+09:00",
   "count": 161,
   "stocks": [
     {
@@ -364,16 +364,6 @@
       "last_trading_date": "2026/09/28"
     },
     {
-      "code": "3856",
-      "name": "Ａｂａｌａｎｃｅ（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/08/25",
-      "delisting_date": "2026/09/26",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/09/25"
-    },
-    {
       "code": "1382",
       "name": "（株）ホーブ",
       "market": "スタンダード",
@@ -526,6 +516,17 @@
       "risk_level": "廃止確定",
       "reason": "キューデンホールディングスの完全子会社化（株式移転）",
       "last_trading_date": "2026/09/28"
+    },
+    {
+      "code": "3856",
+      "name": "Ａｂａｌａｎｃｅ（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/09/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "内部管理体制確認書の提出前で、内部管理体制等が適切に整備される又は適切に運用される見込みがなくなったと当取引所が認める場合",
+      "last_trading_date": "2026/09/25"
     },
     {
       "code": "1948",
