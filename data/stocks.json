@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-09 02:40:35",
-  "updated_at_iso": "2026-10-09T02:40:35.028177+09:00",
+  "updated_at": "2026-10-10 02:15:37",
+  "updated_at_iso": "2026-10-10T02:15:37.153668+09:00",
   "count": 167,
   "stocks": [
     {
@@ -224,16 +224,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "8141",
-      "name": "新光商事（株）",
-      "market": "プライム",
-      "designated_date": "2026/05/15",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "2371",
       "name": "（株）カカクコム",
       "market": "プライム",
@@ -324,6 +314,16 @@
       "last_trading_date": ""
     },
     {
+      "code": "8141",
+      "name": "新光商事（株）",
+      "market": "プライム",
+      "designated_date": "2026/10/09",
+      "delisting_date": "2026/10/29",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/10/28"
+    },
+    {
       "code": "2388",
       "name": "（株）ウェッジホールディングス",
       "market": "グロース",
@@ -332,16 +332,6 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2027/03/31"
-    },
-    {
-      "code": "9691",
-      "name": "（株）両毛システムズ",
-      "market": "スタンダード",
-      "designated_date": "2026/09/16",
-      "delisting_date": "2026/10/09",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/10/08"
     },
     {
       "code": "8254",
@@ -374,26 +364,6 @@
       "last_trading_date": "2026/10/16"
     },
     {
-      "code": "7490",
-      "name": "日新商事（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/09/10",
-      "delisting_date": "2026/10/09",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/10/08"
-    },
-    {
-      "code": "7183",
-      "name": "あんしん保証（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/09/10",
-      "delisting_date": "2026/10/09",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/10/08"
-    },
-    {
       "code": "1382",
       "name": "（株）ホーブ",
       "market": "スタンダード",
@@ -402,6 +372,39 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/12/31"
+    },
+    {
+      "code": "9691",
+      "name": "（株）両毛システムズ",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/09",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式併合）",
+      "last_trading_date": "2026/10/08"
+    },
+    {
+      "code": "7490",
+      "name": "日新商事（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/09",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）",
+      "last_trading_date": "2026/10/08"
+    },
+    {
+      "code": "7183",
+      "name": "あんしん保証（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/10/09",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "支配株主等による買収（公開買付け、株式併合）",
+      "last_trading_date": "2026/10/08"
     },
     {
       "code": "3787",
