@@ -1,8 +1,28 @@
 {
-  "updated_at": "2026-10-13 05:04:14",
-  "updated_at_iso": "2026-10-13T05:04:14.525552+09:00",
-  "count": 167,
+  "updated_at": "2026-10-14 02:53:11",
+  "updated_at_iso": "2026-10-14T02:53:11.018649+09:00",
+  "count": 169,
   "stocks": [
+    {
+      "code": "4714",
+      "name": "（株）リソー教育グループ",
+      "market": "プライム",
+      "designated_date": "2026/10/13",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "3297",
+      "name": "（株）東武住販",
+      "market": "スタンダード",
+      "designated_date": "2026/10/13",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "9244",
       "name": "（株）デジタリフト",
