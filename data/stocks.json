@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-15 00:39:15",
-  "updated_at_iso": "2026-10-15T00:39:15.343036+09:00",
+  "updated_at": "2026-10-16 00:25:23",
+  "updated_at_iso": "2026-10-16T00:25:23.261198+09:00",
   "count": 169,
   "stocks": [
     {
@@ -304,8 +304,8 @@
       "last_trading_date": ""
     },
     {
-      "code": "8798",
-      "name": "（株）アドバンスクリエイト",
+      "code": "2410",
+      "name": "（株）キャリアデザインセンター",
       "market": "プライム",
       "designated_date": "2026/10/01",
       "delisting_date": "",
@@ -314,8 +314,8 @@
       "last_trading_date": ""
     },
     {
-      "code": "2410",
-      "name": "（株）キャリアデザインセンター",
+      "code": "8798",
+      "name": "（株）アドバンスクリエイト",
       "market": "プライム",
       "designated_date": "2026/10/01",
       "delisting_date": "",
