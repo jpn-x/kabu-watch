@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-16 00:25:23",
-  "updated_at_iso": "2026-10-16T00:25:23.261198+09:00",
-  "count": 169,
+  "updated_at": "2026-10-17 00:05:10",
+  "updated_at_iso": "2026-10-17T00:05:10.832542+09:00",
+  "count": 167,
   "stocks": [
     {
       "code": "4714",
@@ -18,16 +18,6 @@
       "name": "（株）東武住販",
       "market": "スタンダード",
       "designated_date": "2026/10/13",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "9244",
-      "name": "（株）デジタリフト",
-      "market": "グロース",
-      "designated_date": "2026/10/01",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
       "risk_level": "高",
@@ -300,16 +290,6 @@
       "designated_date": "2026/02/17",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "2410",
-      "name": "（株）キャリアデザインセンター",
-      "market": "プライム",
-      "designated_date": "2026/10/01",
-      "delisting_date": "",
-      "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
     },
