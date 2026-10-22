@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-10-22 00:46:51",
-  "updated_at_iso": "2026-10-22T00:46:51.937819+09:00",
-  "count": 167,
+  "updated_at": "2026-10-23 00:45:24",
+  "updated_at_iso": "2026-10-23T00:45:24.120572+09:00",
+  "count": 168,
   "stocks": [
+    {
+      "code": "5029",
+      "name": "サークレイス（株）",
+      "market": "グロース",
+      "designated_date": "2026/10/22",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "4714",
       "name": "（株）リソー教育グループ",
