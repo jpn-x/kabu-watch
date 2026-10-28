@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-28 01:07:42",
-  "updated_at_iso": "2026-10-28T01:07:42.365812+09:00",
+  "updated_at": "2026-10-29 01:56:00",
+  "updated_at_iso": "2026-10-29T01:56:00.632933+09:00",
   "count": 168,
   "stocks": [
     {
@@ -28,16 +28,6 @@
       "name": "（株）東武住販",
       "market": "スタンダード",
       "designated_date": "2026/10/13",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "4059",
-      "name": "（株）まぐまぐ",
-      "market": "スタンダード",
-      "designated_date": "2026/10/01",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
       "risk_level": "高",
@@ -312,6 +302,16 @@
       "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
+    },
+    {
+      "code": "4059",
+      "name": "（株）まぐまぐ",
+      "market": "スタンダード",
+      "designated_date": "2026/10/28",
+      "delisting_date": "2027/04/01",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2027/03/31"
     },
     {
       "code": "7523",
