@@ -1,8 +1,38 @@
 {
-  "updated_at": "2026-10-30 02:13:20",
-  "updated_at_iso": "2026-10-30T02:13:20.037503+09:00",
-  "count": 169,
+  "updated_at": "2026-10-31 01:55:06",
+  "updated_at_iso": "2026-10-31T01:55:06.365270+09:00",
+  "count": 173,
   "stocks": [
+    {
+      "code": "7034",
+      "name": "（株）プロレド・パートナーズ",
+      "market": "プライム",
+      "designated_date": "2026/11/01",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "7640",
+      "name": "（株）トップカルチャー",
+      "market": "スタンダード",
+      "designated_date": "2026/11/01",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "4417",
+      "name": "グローバルセキュリティエキスパート（株）",
+      "market": "グロース",
+      "designated_date": "2026/10/30",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "4347",
       "name": "ブロードメディア（株）",
@@ -312,6 +342,16 @@
       "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
+    },
+    {
+      "code": "7878",
+      "name": "（株）光・彩",
+      "market": "スタンダード",
+      "designated_date": "2026/10/30",
+      "delisting_date": "2026/12/01",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/11/30"
     },
     {
       "code": "4059",
