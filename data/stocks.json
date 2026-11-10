@@ -1,8 +1,28 @@
 {
-  "updated_at": "2026-11-10 06:13:46",
-  "updated_at_iso": "2026-11-10T06:13:46.006084+09:00",
-  "count": 175,
+  "updated_at": "2026-11-11 03:23:33",
+  "updated_at_iso": "2026-11-11T03:23:33.511894+09:00",
+  "count": 177,
   "stocks": [
+    {
+      "code": "6391",
+      "name": "（株）加地テック",
+      "market": "スタンダード",
+      "designated_date": "2026/11/10",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "6989",
+      "name": "北陸電気工業（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/11/10",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "6062",
       "name": "（株）チャーム・ケア・コーポレーション",
