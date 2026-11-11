@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-11-11 03:23:33",
-  "updated_at_iso": "2026-11-11T03:23:33.511894+09:00",
-  "count": 177,
+  "updated_at": "2026-11-12 03:15:35",
+  "updated_at_iso": "2026-11-12T03:15:35.737228+09:00",
+  "count": 178,
   "stocks": [
+    {
+      "code": "3920",
+      "name": "アイビーシー（株）",
+      "market": "スタンダード",
+      "designated_date": "2026/11/11",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "6391",
       "name": "（株）加地テック",
@@ -404,16 +414,6 @@
       "last_trading_date": "2027/03/31"
     },
     {
-      "code": "7523",
-      "name": "アールビバン（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/10/20",
-      "delisting_date": "2026/11/11",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/11/10"
-    },
-    {
       "code": "2388",
       "name": "（株）ウェッジホールディングス",
       "market": "グロース",
@@ -452,6 +452,17 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/12/31"
+    },
+    {
+      "code": "7523",
+      "name": "アールビバン（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/11/11",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）",
+      "last_trading_date": "2026/11/10"
     },
     {
       "code": "8141",
