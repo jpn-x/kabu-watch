@@ -1,8 +1,18 @@
 {
-  "updated_at": "2026-11-12 03:15:35",
-  "updated_at_iso": "2026-11-12T03:15:35.737228+09:00",
-  "count": 178,
+  "updated_at": "2026-11-13 03:39:51",
+  "updated_at_iso": "2026-11-13T03:39:51.404904+09:00",
+  "count": 180,
   "stocks": [
+    {
+      "code": "1853",
+      "name": "（株）森組",
+      "market": "スタンダード",
+      "designated_date": "2026/11/12",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "3920",
       "name": "アイビーシー（株）",
@@ -452,6 +462,17 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/12/31"
+    },
+    {
+      "code": "4178",
+      "name": "（株）Ｓｈａｒｉｎｇ　Ｉｎｎｏｖａｔｉｏｎｓ",
+      "market": "グロース",
+      "designated_date": "",
+      "delisting_date": "2026/11/26",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "Ｏｒｃｈｅｓｔｒａ　Ｈｏｌｄｉｎｇｓの完全子会社化（株式交換）",
+      "last_trading_date": "2026/11/25"
     },
     {
       "code": "7523",
