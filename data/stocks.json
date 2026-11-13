@@ -1,8 +1,28 @@
 {
-  "updated_at": "2026-11-13 03:39:51",
-  "updated_at_iso": "2026-11-13T03:39:51.404904+09:00",
-  "count": 180,
+  "updated_at": "2026-11-14 03:18:58",
+  "updated_at_iso": "2026-11-14T03:18:58.666584+09:00",
+  "count": 183,
   "stocks": [
+    {
+      "code": "7522",
+      "name": "ワタミ（株）",
+      "market": "プライム",
+      "designated_date": "2026/11/13",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "1438",
+      "name": "（株）岐阜造園",
+      "market": "スタンダード",
+      "designated_date": "2026/11/13",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "1853",
       "name": "（株）森組",
@@ -462,6 +482,17 @@
       "category": "整理銘柄",
       "risk_level": "極高",
       "last_trading_date": "2026/12/31"
+    },
+    {
+      "code": "6044",
+      "name": "（株）三機サービス",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/11/27",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "三機シンメンテホールディングスの完全子会社化（株式交換）",
+      "last_trading_date": "2026/11/26"
     },
     {
       "code": "4178",
