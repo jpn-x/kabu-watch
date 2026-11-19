@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-19 04:12:25",
-  "updated_at_iso": "2026-11-19T04:12:25.201838+09:00",
+  "updated_at": "2026-11-20 04:16:47",
+  "updated_at_iso": "2026-11-20T04:16:47.715361+09:00",
   "count": 183,
   "stocks": [
     {
@@ -148,16 +148,6 @@
       "name": "（株）東武住販",
       "market": "スタンダード",
       "designated_date": "2026/10/13",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
-      "code": "9246",
-      "name": "（株）プロジェクトホールディングス",
-      "market": "グロース",
-      "designated_date": "2026/09/28",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
       "risk_level": "高",
@@ -402,6 +392,16 @@
       "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
+    },
+    {
+      "code": "9246",
+      "name": "（株）プロジェクトホールディングス",
+      "market": "グロース",
+      "designated_date": "2026/11/19",
+      "delisting_date": "2026/12/11",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/12/10"
     },
     {
       "code": "2997",
