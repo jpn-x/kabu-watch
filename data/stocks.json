@@ -1,8 +1,28 @@
 {
-  "updated_at": "2026-11-20 04:16:47",
-  "updated_at_iso": "2026-11-20T04:16:47.715361+09:00",
-  "count": 183,
+  "updated_at": "2026-11-21 03:55:45",
+  "updated_at_iso": "2026-11-21T03:55:45.361544+09:00",
+  "count": 185,
   "stocks": [
+    {
+      "code": "6727",
+      "name": "（株）ワコム",
+      "market": "プライム",
+      "designated_date": "2026/11/20",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
+    {
+      "code": "4933",
+      "name": "（株）Ｉ－ｎｅ",
+      "market": "プライム",
+      "designated_date": "2026/11/20",
+      "delisting_date": "",
+      "category": "監理銘柄（確認中）",
+      "risk_level": "高",
+      "last_trading_date": ""
+    },
     {
       "code": "7522",
       "name": "ワタミ（株）",
@@ -254,16 +274,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "3676",
-      "name": "（株）デジタルハーツホールディングス",
-      "market": "プライム",
-      "designated_date": "2026/08/06",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "4320",
       "name": "（株）ＣＥホールディングス",
       "market": "スタンダード",
@@ -392,6 +402,16 @@
       "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
+    },
+    {
+      "code": "3676",
+      "name": "（株）デジタルハーツホールディングス",
+      "market": "プライム",
+      "designated_date": "2026/11/20",
+      "delisting_date": "2026/12/11",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/12/10"
     },
     {
       "code": "9246",
