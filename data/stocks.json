@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-25 05:57:38",
-  "updated_at_iso": "2026-11-25T05:57:38.599475+09:00",
+  "updated_at": "2026-11-26 05:19:15",
+  "updated_at_iso": "2026-11-26T05:19:15.900246+09:00",
   "count": 185,
   "stocks": [
     {
@@ -434,16 +434,6 @@
       "last_trading_date": "2026/12/15"
     },
     {
-      "code": "3544",
-      "name": "サツドラホールディングス（株）",
-      "market": "スタンダード",
-      "designated_date": "2026/11/06",
-      "delisting_date": "2026/11/25",
-      "category": "整理銘柄",
-      "risk_level": "極高",
-      "last_trading_date": "2026/11/24"
-    },
-    {
       "code": "7878",
       "name": "（株）光・彩",
       "market": "スタンダード",
@@ -524,6 +514,17 @@
       "risk_level": "廃止確定",
       "reason": "Ｏｒｃｈｅｓｔｒａ　Ｈｏｌｄｉｎｇｓの完全子会社化（株式交換）",
       "last_trading_date": "2026/11/25"
+    },
+    {
+      "code": "3544",
+      "name": "サツドラホールディングス（株）",
+      "market": "スタンダード",
+      "designated_date": "",
+      "delisting_date": "2026/11/25",
+      "category": "上場廃止",
+      "risk_level": "廃止確定",
+      "reason": "ＭＢＯ（公開買付け、株式併合）",
+      "last_trading_date": "2026/11/24"
     },
     {
       "code": "7523",
