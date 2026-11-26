@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-26 05:19:15",
-  "updated_at_iso": "2026-11-26T05:19:15.900246+09:00",
+  "updated_at": "2026-11-27 04:56:09",
+  "updated_at_iso": "2026-11-27T04:56:09.249839+09:00",
   "count": 185,
   "stocks": [
     {
@@ -104,9 +104,9 @@
       "last_trading_date": ""
     },
     {
-      "code": "7034",
-      "name": "（株）プロレド・パートナーズ",
-      "market": "プライム",
+      "code": "7640",
+      "name": "（株）トップカルチャー",
+      "market": "スタンダード",
       "designated_date": "2026/11/01",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
@@ -114,9 +114,9 @@
       "last_trading_date": ""
     },
     {
-      "code": "7640",
-      "name": "（株）トップカルチャー",
-      "market": "スタンダード",
+      "code": "7034",
+      "name": "（株）プロレド・パートナーズ",
+      "market": "プライム",
       "designated_date": "2026/11/01",
       "delisting_date": "",
       "category": "監理銘柄（確認中）",
@@ -374,16 +374,6 @@
       "last_trading_date": ""
     },
     {
-      "code": "4464",
-      "name": "（株）ソフト９９コーポレーション",
-      "market": "スタンダード",
-      "designated_date": "2026/02/17",
-      "delisting_date": "",
-      "category": "監理銘柄（確認中）",
-      "risk_level": "高",
-      "last_trading_date": ""
-    },
-    {
       "code": "8798",
       "name": "（株）アドバンスクリエイト",
       "market": "プライム",
@@ -402,6 +392,16 @@
       "category": "監理銘柄（審査中）",
       "risk_level": "高",
       "last_trading_date": ""
+    },
+    {
+      "code": "4464",
+      "name": "（株）ソフト９９コーポレーション",
+      "market": "スタンダード",
+      "designated_date": "2026/11/26",
+      "delisting_date": "2026/12/17",
+      "category": "整理銘柄",
+      "risk_level": "極高",
+      "last_trading_date": "2026/12/16"
     },
     {
       "code": "3676",
